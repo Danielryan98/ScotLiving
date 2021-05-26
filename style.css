@@ -3,27 +3,14 @@
 	src: url(Fonts/Quicksand-VariableFont_wght.ttf);
   }
 
-.navbar-nav a {
+.nav-item {
 	font-size: 21px;
 	font-family: myFirstFont;
 }
 
-.navbar-nav {
-    background-color: #bfd9d7;
-    width: 100%;
-    padding: 0%;
+.slideshow {
+    width: 1400px;
+    position: relative;
+    margin: auto;
 }
 
-@media (min-width: 992px) {
-    .navbar {
-        height:130px;
-    }
-}
-
-.carousel-inner {
-    height: 100vh;
-}
-
-.carousel-item img {
-	height: 100vh;
-  }
