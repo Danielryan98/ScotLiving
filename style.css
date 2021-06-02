@@ -3,30 +3,39 @@
 	src: url(Fonts/Quicksand-VariableFont_wght.ttf);
   }
 
-.top-headings {
-  width: 100%;
-  height: 50px;
-  justify-content: space-between;
+.second-header-top img{
+  height: 200px;
+  padding-bottom: 10px;
+}
+
+.second-header-top {
+  font-size: 0;
+  text-align: center;
   margin: auto;
-  text-align: right;
-  padding-right: 25%;
 }
 
-.top-headings a img {
-  width: 25px;
-  height: 25px;
-  margin-right: 0.22%;
+
+
+.second-header-top .search-bar .form-control{
+  margin-left: auto;
+ 
 }
 
-.top-headings a h {
-  margin-right: 1%;
+.second-header-top .search-bar .btn{
+  margin-right: auto;
+}
+
+.item a {
   color: black;
+  text-decoration: none;
 }
 
-.top-headings a {
-  text-decoration: none !important;
+.item a:hover {
+  color: black;
+  text-decoration: none;
 }
 
+ 
 .nav-item {
 	font-size: 21px;
 	font-family: myFirstFont;
@@ -66,6 +75,7 @@
   width: 100%;
   height: auto;
 }
+
 
 
 
