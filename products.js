@@ -73,19 +73,42 @@ const fabricSofasData = [
     }
 ];
 
+const tempArray = [];
+
+function move(){
+    window.location = "product.html";
+}
+
+var count = 0;
+
+function count(){
+    count++;
+}
 
 
 document.getElementById("app").innerHTML = `
 ${fabricSofasData.map(function(sofa){
     return `
+    <script type = "text/javascript">  
+         count();
+         document.write(count);
+    </script>
     <div class="card">
-    <a href="product.html">
+    <a href="javascript:move();">
         <img class="product-photo" src="${sofa.photo}">
         </a>
           <div class="card-body">
             <p class="card-title">${sofa.productName}</p>
             <p class="product-price">£${sofa.price}</p>
+            <p id="counter">document.getElementById("counter").innerHTML = count;</p>
           </div>
           </div>
+    `
+}).join('')}`
+
+document.getElementById("product").innerHTML = `
+${fabricSofasData.map(function(sofa){
+    return `
+    <p class="sofa-name">${sofa.productName}</p>
     `
 }).join('')}`
