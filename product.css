@@ -1,0 +1,43 @@
+#my-div{
+    margin: 0 auto;
+    width: 80%;
+    height: 50%;
+  }
+
+  @font-face {
+	font-family: myFirstFont;
+	src: url(Fonts/Quicksand-VariableFont_wght.ttf);
+  }
+
+.second-header-top img{
+  height: 200px;
+  padding-bottom: 10px;
+}
+
+.second-header-top {
+  font-size: 0;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+.second-header-top .search-bar .form-control{
+  margin-left: auto;
+ 
+}
+
+.second-header-top .search-bar .btn{
+  margin-right: auto;
+}
+
+.nav-item {
+	font-size: 21px;
+	font-family: myFirstFont;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+    margin: auto;
+    background-color: #bfd9d7;
+  }
