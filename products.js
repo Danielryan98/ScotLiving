@@ -112,3 +112,14 @@ ${fabricSofasData.map(function(sofa){
     <p class="sofa-name">${sofa.productName}</p>
     `
 }).join('')}`
+
+function changeImage(smallImg){
+    var fullImg = document.getElementById("bigImg");
+    fullImg.src = smallImg.src;
+}
+
+function enlargeImage(fullImg){
+    var enlargeImg = document.getElementById("enlargeImg");
+    var fullImg = document.getElementById("bigImg");
+    enlargeImg.src = fullImg.src;
+}

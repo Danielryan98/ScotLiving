@@ -1,8 +1,4 @@
-#my-div{
-    margin: 0 auto;
-    width: 80%;
-    height: 50%;
-  }
+
 
   @font-face {
 	font-family: myFirstFont;
@@ -19,8 +15,6 @@
   text-align: center;
   margin: auto;
 }
-
-
 
 .second-header-top .search-bar .form-control{
   margin-left: auto;
@@ -41,3 +35,28 @@
     margin: auto;
     background-color: #bfd9d7;
   }
+
+.row {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small-img-row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
