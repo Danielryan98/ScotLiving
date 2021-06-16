@@ -1,4 +1,7 @@
-
+*{
+  margin: 0;
+  padding: 0;
+}
 
   @font-face {
 	font-family: myFirstFont;
@@ -36,18 +39,6 @@
     background-color: #bfd9d7;
   }
 
-.row {
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#product {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .small-img-row {
   display: flex;
@@ -59,4 +50,28 @@
 .small-img-col {
   flex-basis: 24%;
   cursor: pointer;
+}
+
+#facilities {
+  
+  padding: 10px 0px;
+}
+
+#card-one {
+  border-top: none;
+  border-right: none;
+  border-left: none; 
+  border-bottom: none; 
+  border-radius: 0 !important;
+}
+
+#card-two {
+  border-top: none;
+  border-right: none;
+  border-bottom: none; 
+  border-radius: 0 !important;
+}
+
+#card-two img {
+  padding-top: 5%;
 }
