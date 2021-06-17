@@ -93,9 +93,9 @@ ${fabricSofasData.map(function(sofa){
          count();
          document.write(count);
     </script>
-    <div class="card">
+    <div class="card" style="width: 500px;">
     <a href="javascript:move();">
-        <img class="product-photo" src="${sofa.photo}">
+        <img class="product-photo" style="min-width: 100%;" src="${sofa.photo}">
         </a>
           <div class="card-body">
             <p class="card-title">${sofa.productName}</p>
