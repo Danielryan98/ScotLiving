@@ -122,19 +122,23 @@
 @media (max-width: 1000px) {
   .card-columns.custom-columns {
       column-count: 1;
+      width: 500px;
   }
 }
 @media (min-width: 1000px) {
   .card-columns.custom-columns {
       column-count: 2;
+      width: 1000px;
   }
 }
 @media (min-width: 1500px) {
   .card-columns.custom-columns {
       column-count: 3;
-      text-align: center;
+      width: 1500px;
   }
 }
+
+
 
 
 .card-body {
