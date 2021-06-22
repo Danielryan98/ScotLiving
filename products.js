@@ -76,7 +76,7 @@ const fabricSofasData = [
 const tempArray = [];
 
 function move(int){
-    window.location = "product.html";
+    window.open("product.html","_self");
 }
 
 
@@ -94,7 +94,7 @@ ${fabricSofasData.map(function(sofa){
         <img class="product-photo" style="min-width: 100%;" src="${sofa.photo}">
         </a>
           <div class="card-body">
-            <p class="card-title">${sofa.productName}</p>
+            <p id="prodName" class="card-title">${sofa.productName}</p>
             <p class="product-price">£${sofa.price}</p>
             <p class="product-description">${sofa.productNumber}</p>
           </div>
@@ -102,46 +102,79 @@ ${fabricSofasData.map(function(sofa){
     `
 }).join('')}`
 
-document.getElementById("facilities").innerHTML = `
+document.getElementById("demo").innerHTML = `
 ${fabricSofasData.map(function(sofa){
     return `
-    <div class="row justify-content-center">
-			<div class="col-md-5" style="min-width: 400px;">
-				<div id="card-one" class="card">
-					<h5 class="card-title">${sofa.productName}</h5>
-					<img id="bigImg" src=${sofa.photo} class="card-img-top" onclick="enlargeImage(this)" data-bs-toggle="modal" data-bs-target="#exampleModal" width="100%" alt="Sofa">
-					<div class="card-body">
-						<div class="small-img-row">
-							<div class="small-img-col">
-								<img src="Pictures/product-sofa1.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-							</div>
-							<div class="small-img-col">
-							  <img src="Pictures/product-sofa2.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-						  </div>
-						  <div class="small-img-col">
-							  <img src="Pictures/product-sofa3.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-						  </div>
-						  <div class="small-img-col">
-							  <img src="Pictures/product-sofa4.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-						  </div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-2" style="min-width: 400px;">
-				<div id="card-two" class="card">
-					<h5 class="price">${sofa.price}</h5>
-					<div class="card-body">
-						<button class="btn-buy"><i class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></i> Add to Basket</button>
-						<button class="btn-phone"><i class="fa fa-phone fa-lg" style="padding-right: 4%; padding-left: 1%;"></i> Order by Phone</button>
-						<img src="Pictures/sale.png" alt="">
-						<img src="Pictures/chair.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
+    <script type = "text/javascript">  
+         count();
+         document.write(count);
+    </script>
+    <div class="card" style="width: 500px;">
+    <a href="javascript:move(${sofa.productNumber});">
+        <img class="product-photo" style="min-width: 100%;" src="${sofa.photo}">
+        </a>
+          <div class="card-body">
+            <p id="prodName" class="card-title">${sofa.productName}</p>
+            <p class="product-price">£${sofa.price}</p>
+            <p class="product-description">${sofa.productNumber}</p>
+          </div>
+          </div>
     `
 }).join('')}`
+
+// document.getElementById("facilities").innerHTML = `
+// ${fabricSofasData.map(function(sofa){
+//     return `
+//     <div class="row justify-content-center">
+// 			<div class="col-md-5" style="min-width: 400px;">
+// 				<div id="card-one" class="card">
+// 					<h5 class="card-title">${sofa.productName}</h5>
+// 					<img id="bigImg" src=${sofa.photo} class="card-img-top" onclick="enlargeImage(this)" data-bs-toggle="modal" data-bs-target="#exampleModal" width="100%" alt="Sofa">
+// 					<div class="card-body">
+// 						<div class="small-img-row">
+// 							<div class="small-img-col">
+// 								<img src="Pictures/product-sofa1.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+// 							</div>
+// 							<div class="small-img-col">
+// 							  <img src="Pictures/product-sofa2.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+// 						  </div>
+// 						  <div class="small-img-col">
+// 							  <img src="Pictures/product-sofa3.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+// 						  </div>
+// 						  <div class="small-img-col">
+// 							  <img src="Pictures/product-sofa4.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+// 						  </div>
+// 						</div>
+// 					</div>
+// 				</div>
+// 			</div>
+// 			<div class="col-md-2" style="min-width: 400px;">
+// 				<div id="card-two" class="card">
+// 					<h5 class="price">${sofa.price}</h5>
+// 					<div class="card-body">
+// 						<button class="btn-buy"><i class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></i> Add to Basket</button>
+// 						<button class="btn-phone"><i class="fa fa-phone fa-lg" style="padding-right: 4%; padding-left: 1%;"></i> Order by Phone</button>
+// 						<img src="Pictures/sale.png" alt="">
+// 						<img src="Pictures/chair.png" alt="">
+// 					</div>
+// 				</div>
+// 			</div>
+// 		</div>
+//     `
+// }).join('')}`
+
+
+
+var checks = document.querySelectorAll('.product-photo');
+
+checks.forEach(function(check){
+  check.addEventListener('click', checkIndex);
+})
+
+function checkIndex(event){
+  console.log( Array.from(checks).indexOf(event.target) );
+  var indexOfProduct = Array.from(checks).indexOf(event.target);
+}
 
 function changeImage(smallImg){
     var fullImg = document.getElementById("bigImg");
