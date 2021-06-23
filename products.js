@@ -79,7 +79,22 @@ function move(int){
     window.open("product.html","_self");
 }
 
+window.onload = function (indexOfProduct) {
+    document.getElementById("productName").innerHTML=(fabricSofasData[1].productName);
+    document.getElementById("price").innerHTML=(fabricSofasData[2].price);
+    document.getElementById("bigImg").innerHTML=(fabricSofasData[3].photo);  
+};
 
+function changeImage(smallImg){
+    var fullImg = document.getElementById("bigImg");
+    fullImg.src = smallImg.src;
+}
+
+function enlargeImage(fullImg){
+    var enlargeImg = document.getElementById("enlargeImg");
+    var fullImg = document.getElementById("bigImg");
+    enlargeImg.src = fullImg.src;
+}
 
 
 document.getElementById("app").innerHTML = `
@@ -102,25 +117,27 @@ ${fabricSofasData.map(function(sofa){
     `
 }).join('')}`
 
-document.getElementById("demo").innerHTML = `
-${fabricSofasData.map(function(sofa){
-    return `
-    <script type = "text/javascript">  
-         count();
-         document.write(count);
-    </script>
-    <div class="card" style="width: 500px;">
-    <a href="javascript:move(${sofa.productNumber});">
-        <img class="product-photo" style="min-width: 100%;" src="${sofa.photo}">
-        </a>
-          <div class="card-body">
-            <p id="prodName" class="card-title">${sofa.productName}</p>
-            <p class="product-price">£${sofa.price}</p>
-            <p class="product-description">${sofa.productNumber}</p>
-          </div>
-          </div>
-    `
-}).join('')}`
+// function buildProduct (){
+// document.getElementById("demo").innerHTML = `
+// ${fabricSofasData.map(function(sofa){
+//     return `
+//     <script type = "text/javascript">  
+//          count();
+//          document.write(count);
+//     </script>
+//     <div class="card" style="width: 500px;">
+//     <a href="javascript:move(${sofa.productNumber});">
+//         <img class="product-photo" style="min-width: 100%;" src="${sofa.photo}">
+//         </a>
+//           <div class="card-body">
+//             <p id="prodName" class="card-title">${sofa.productName}</p>
+//             <p class="product-price">£${sofa.price}</p>
+//             <p class="product-description">${sofa.productNumber}</p>
+//           </div>
+//           </div>
+//     `
+// }).join('')}`
+// };
 
 // document.getElementById("facilities").innerHTML = `
 // ${fabricSofasData.map(function(sofa){
@@ -163,26 +180,16 @@ ${fabricSofasData.map(function(sofa){
 //     `
 // }).join('')}`
 
-
-
-var checks = document.querySelectorAll('.product-photo');
+var checks = document.querySelectorAll('.product-photo');  
 
 checks.forEach(function(check){
-  check.addEventListener('click', checkIndex);
-})
+    check.addEventListener('click', checkIndex);
+    })
+
 
 function checkIndex(event){
   console.log( Array.from(checks).indexOf(event.target) );
   var indexOfProduct = Array.from(checks).indexOf(event.target);
 }
 
-function changeImage(smallImg){
-    var fullImg = document.getElementById("bigImg");
-    fullImg.src = smallImg.src;
-}
 
-function enlargeImage(fullImg){
-    var enlargeImg = document.getElementById("enlargeImg");
-    var fullImg = document.getElementById("bigImg");
-    enlargeImg.src = fullImg.src;
-}

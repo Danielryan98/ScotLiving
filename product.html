@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -105,21 +105,62 @@
 		</div>
 	</nav>
 	
-	<div id="demo" style="padding-top: 0.5%; text-align: center; margin: auto;" class="card-columns custom-columns"></div>
+	<section id="facilities">
+		<div class="row justify-content-center">
+			<div class="col-md-5" style="min-width: 400px;">
+				<div id="card-one" class="card">
+					<h5 id="productName" class="card-title">SOFA NAME</h5>
+					<img id="bigImg" src="Pictures/product-sofa1.jpg" class="card-img-top" onclick="enlargeImage(this)" data-bs-toggle="modal" data-bs-target="#exampleModal" width="100%" alt="Sofa">
+					<div class="card-body">
+						<div class="small-img-row">
+							<div class="small-img-col">
+								<img src="Pictures/product-sofa1.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+							</div>
+							<div class="small-img-col">
+							  <img src="Pictures/product-sofa2.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+						  </div>
+						  <div class="small-img-col">
+							  <img src="Pictures/product-sofa3.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+						  </div>
+						  <div class="small-img-col">
+							  <img src="Pictures/product-sofa4.jpg" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2" style="min-width: 400px;">
+				<div id="card-two" class="card">
+					<h5 id="price" class="price">£699</h5>
+					<div class="card-body">
+						<button class="btn-buy"><i class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></i> Add to Basket</button>
+						<button class="btn-phone"><i class="fa fa-phone fa-lg" style="padding-right: 4%; padding-left: 1%;"></i> Order by Phone</button>
+						<img src="Pictures/sale.png" alt="">
+						<img src="Pictures/chair.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content" style="width: 1000px; height: 1000px;">
+				<div class="modal-body">
+				<img id="enlargeImg" src="#" style="width: 600px; height: 600px; " alt="Picture">
+				</div>
+			</div>
+			</div>
+		</div>
 	
 
-	<!-- Optional JavaScript -->
-  <script type="text/javascript" src='products.js'></script>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+		<!-- Optional JavaScript -->
+		<script type="text/javascript" src='products.js'> </script>
+
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/ionicons@5.5.1/dist/ionicons.js"></script>
 	</section>
 </body>
 </html>
