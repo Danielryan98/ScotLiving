@@ -79,10 +79,15 @@ function move(int){
     window.open("product.html","_self");
 }
 
-window.onload = function (indexOfProduct) {
-    document.getElementById("productName").innerHTML=(fabricSofasData[1].productName);
+function buildImage() {
+      var img = document.getElementById("bigImg")
+      img.src = fabricSofasData[4].photo;
+    }
+
+window.onload = function () {
+    buildImage();
+    document.getElementById("productName").innerHTML=(fabricSofasData[2].productName);
     document.getElementById("price").innerHTML=(fabricSofasData[2].price);
-    document.getElementById("bigImg").innerHTML=(fabricSofasData[3].photo);  
 };
 
 function changeImage(smallImg){
