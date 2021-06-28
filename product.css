@@ -47,6 +47,11 @@
     background-color: #bfd9d7;
   }
 
+.card-img-top {
+  height: 500px;
+  width: 975px !important;
+  margin: auto;
+}
 
 .small-img-row {
   display: flex;
