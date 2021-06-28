@@ -1,7 +1,7 @@
 window.onload = function () {
     buildImages();
     document.getElementById("productName").innerHTML=(fabricSofasData[productNumber].productName);
-    document.getElementById("price").innerHTML=(fabricSofasData[productNumber].price);
+    document.getElementById("price").innerHTML='£'+(fabricSofasData[productNumber].price);
 };
 
 function buildImages() {

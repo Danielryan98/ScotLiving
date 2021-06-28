@@ -1,6 +1,5 @@
 const fabricSofasData = [
     {
-        productNumber: 1,
         productName: "Orka: Left Hand Facing Arm Open End Corner Sofa",
         price: 799,
         cataloguePhoto: "Pictures/orka.jpg",
@@ -10,69 +9,65 @@ const fabricSofasData = [
         photoFour: "Pictures/orka4.jpg"
     },
     {
-        productNumber: 2,
-        productName: "Product numero deus",
-        price: 1000,
-        cataloguePhoto: "Pictures/fabric-2.jpg",
-        photoTwo: "Pictures/fabric-3.jpg"
-    },
-    {
-        productNumber: 3,
-        productName: "Product numero 3",
-        price: 500,
-        cataloguePhoto: "Pictures/fabric-3.jpg"
-    },
-    {
-        productNumber: 4,
-        productName: "Product number 4",
-        price: 200,
-        cataloguePhoto: "Pictures/fabric-4.jpg"
-    },
-    {
-        productNumber: 5,
-        productName: "Product numero 5",
-        price: 500,
-        cataloguePhoto: "Pictures/fabric-5.jpg"
-    },
-    {
-        productNumber: 6,
-        productName: "Product numero 6",
-        price: 500,
-        cataloguePhoto: "Pictures/fabric-6.jpg"
-    },
-    {
-        productNumber: 7,
-        productName: "Product numero 7",
-        price: 500,
-        cataloguePhoto: "Pictures/fabric-7.jpg"
-    },
-    {
-        productNumber: 8,
-        productName: "Product numero 8",
-        price: 500,
-        cataloguePhoto: "Pictures/fabric-8.jpg"
-    },
-    {
-        productNumber: 9,
         productName: "Product numero 9",
         price: 500,
         cataloguePhoto: "Pictures/fabric-9.jpg"
     },
     {
-        productNumber: 10,
-        productName: "Product numero 10",
+        productName: "Product numero 5",
+        price: 500,
+        cataloguePhoto: "Pictures/fabric-5.jpg"
+    },
+    {
+        productName: "Product number 4",
+        price: 200,
+        cataloguePhoto: "Pictures/fabric-4.jpg"
+    },
+    {
+        productName: "Patterdale Velvet Left Hand Facing Small Chaise Sofa",
+        price: 1299,
+        cataloguePhoto: "Pictures/patterdale.jpg",
+        photoOne: "Pictures/patterdale1.jpg",
+        photoTwo: "Pictures/patterdale2.jpg",
+        photoThree: "Pictures/patterdale3.jpg",
+        photoFour: "Pictures/patterdale4.jpg"
+    },
+    {
+        productName: "Product numero 6",
+        price: 500,
+        cataloguePhoto: "Pictures/fabric-6.jpg"
+    },
+    {
+        productName: "Product numero 7",
+        price: 500,
+        cataloguePhoto: "Pictures/fabric-7.jpg"
+    },
+    {
+        productName: "Product numero 8",
+        price: 500,
+        cataloguePhoto: "Pictures/fabric-8.jpg"
+    },
+    {
+        productName: "Niko 3 Seater Sofa",
+        price: 349,
+        cataloguePhoto: "Pictures/niko.jpg",
+        photoOne: "Pictures/niko1.jpg",
+        photoTwo: "Pictures/niko2.jpg",
+        photoThree: "Pictures/niko3.jpg",
+        photoFour: "Pictures/niko4.jpg"
+    },
+    {
+         productName: "Product numero 10",
         price: 500,
         cataloguePhoto: "Pictures/fabric-10.jpg"
     },
     {
-        productNumber: 11,
-        productName: "Product numero 11",
+         productName: "Product numero 11",
         price: 500,
         cataloguePhoto: "Pictures/fabric-11.jpg"
     },
     {
-        productNumber: 12,
-        productName: "Product numero 12",
+         productName: "Product numero 12",
         price: 500,
         cataloguePhoto: "Pictures/fabric-12.jpg"
     }

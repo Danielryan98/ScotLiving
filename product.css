@@ -89,6 +89,10 @@
   padding-top: 5%;
 }
 
+.product-price{
+  margin-left: 20px;
+}
+
 /* Style buttons */
 .btn-buy {
   background-color: #bfd9d7; /* Blue background */
