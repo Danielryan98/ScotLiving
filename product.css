@@ -47,10 +47,71 @@
     background-color: #bfd9d7;
   }
 
+
+.row {
+  padding-top: 6px;
+  justify-content: center;
+}
+
+
+  
+@media (max-width: 1400px) {
+  .column {
+    width: 100%;
+  }
+  #card-one {
+    margin: auto;
+    min-width: 100%;
+  }
+  #card-two {
+    margin: auto;
+    border-left: none;
+    min-width: 100%;
+  }
+  #adOne {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  #adTwo {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .column {
+    width: 100%;
+  }
+  #card-one {
+    margin: auto;
+    max-width: 100%;
+  }
+  #card-two {
+    margin: auto;
+    border-left: none;
+    max-width: 100%;
+  }
+  #adOne {
+    max-width: 100%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  #adTwo {
+    max-width: 100%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
 .card-img-top {
-  height: 500px;
-  width: 975px !important;
   margin: auto;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 .small-img-row {
@@ -65,8 +126,11 @@
   cursor: pointer;
 }
 
+.modal {
+  margin: auto;
+}
+
 #facilities {
-  
   padding: 10px 0px;
 }
 

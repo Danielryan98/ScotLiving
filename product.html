@@ -108,55 +108,54 @@
 		</div>
 	</nav>
 	
-	<section id="facilities">
-		<div class="row justify-content-center">
-			<div class="col-md-5" style="min-width: 400px;">
-				<div id="card-one" class="card">
-					<h5 id="productName" class="card-title">SOFA NAME</h5>
-					<div class="contents" id="content"></div>
-					<img id="bigImg" src="" class="card-img-top" onclick="enlargeImage(this)" data-bs-toggle="modal" data-bs-target="#exampleModal" width="100%" alt="Sofa">
-					<div class="card-body">
-						<div class="small-img-row">
-							<div class="small-img-col">
-								<img id="photoOne" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-							</div>
-							<div class="small-img-col">
-							  <img id="photoTwo" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-						  </div>
-						  <div class="small-img-col">
-							  <img id="photoThree" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-						  </div>
-						  <div class="small-img-col">
-							  <img id="photoFour" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
-						  </div>
+	<div class="row" style="width: 100%;">
+		<div class="column">
+			<div id="card-one" class="card" style="width: 1000px;">
+				<h5 id="productName" class="card-title">SOFA NAME</h5>
+				<div class="contents" id="content"></div>
+				<img id="bigImg" src="" class="card-img-top" onclick="enlargeImage(this)" data-bs-toggle="modal" data-bs-target="#exampleModal" width="100%" alt="Sofa">
+				<div class="card-body">
+					<div class="small-img-row">
+						<div class="small-img-col">
+							<img id="photoOne" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-2" style="min-width: 400px;">
-				<div id="card-two" class="card">
-					<h5 id="price" class="product-price"></h5>
-					<div class="card-body">
-						<button class="btn-buy"><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em> Add to Basket</button>
-						<button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 4%; padding-left: 1%;"></em> Order by Phone</button>
-						<img src="Pictures/sale.png" alt="">
-						<img src="Pictures/chair.png" alt="">
+						<div class="small-img-col">
+						  <img id="photoTwo" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+					  </div>
+					  <div class="small-img-col">
+						  <img id="photoThree" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+					  </div>
+					  <div class="small-img-col">
+						  <img id="photoFour" src="" onclick="changeImage(this)" alt="Sofa" width="100%" class="small-img">
+					  </div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+		<div class="column">
+			<div id="card-two" class="card" style="width: 372px;">
+				<h5 id="price" class="product-price"></h5>
+				<div class="card-body">
+					<button class="btn-buy"><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em> Add to Basket</button>
+					<button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 4%; padding-left: 1%;"></em> Order by Phone</button>
+					<img id="adOne" src="Pictures/sale.png" alt="">
+					<img id="adTwo" src="Pictures/chair.png" alt="">
+				</div>
+			</div>
+		</div>
+	  </div>
   
 		<!-- Modal -->
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content" style="width: 1000px; height: 1000px;">
 				<div class="modal-body">
-				<img id="enlargeImg" src="#" style="width: 600px; height: 600px; " alt="Picture">
+				<img id="enlargeImg" src="#" style="width: 900px; height: 600px; " alt="Picture">
 				</div>
 			</div>
 			</div>
 		</div>
+
 	
 
 		<!-- Optional JavaScript -->
