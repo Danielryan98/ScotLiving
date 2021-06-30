@@ -41,27 +41,26 @@
 }
 
 .nav-item {
-	font-size: 21px;
+	font-size: 17px;
 	font-family: myFirstFont;
   justify-content: space-between;
-  height: 100%;
-  padding: 0;
-}
-
-.nav-link {
-  height: 100%;
-  padding: 0;
-}
-
-.nav-link:hover {
-  background-color: white;
+  text-align: center;
 }
 
 .navbar-nav {
-    margin: auto;
-    background-color: #bfd9d7;
-  }
+  margin: auto;
+  background-color: #bfd9d7;
+}
 
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    background-color: white;
+}
+
+.nav-link {
+  width: 127px;
+}
 
 .row {
   padding-top: 6px;

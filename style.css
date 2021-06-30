@@ -68,7 +68,6 @@
 
 .nav-link {
   width: 127px;
-  border-right:solid 1px #fff;
 }
 
 
@@ -130,6 +129,15 @@
   color: black;
 }
 
+.map-container {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.map {
+  display: block;
+  margin: auto !important;
+}
 
 
 @media (max-width: 1000px) {
