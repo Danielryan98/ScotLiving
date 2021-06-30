@@ -37,9 +37,10 @@
 
  
 .nav-item {
-	font-size: 21px;
+	font-size: 17px;
 	font-family: myFirstFont;
   justify-content: space-between;
+  text-align: center;
 }
 
 .slideshow {
@@ -58,6 +59,18 @@
   margin: auto;
   background-color: #bfd9d7;
 }
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+    background-color: white;
+}
+
+.nav-link {
+  width: 127px;
+  border-right:solid 1px #fff;
+}
+
 
 .carousel-item img {
 	height: 625px;
