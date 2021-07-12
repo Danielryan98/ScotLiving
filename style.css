@@ -14,11 +14,21 @@
   margin: auto;
 }
 
+@media (min-width: 992px){
+  #navbar-search {
+    display: none !important;
+  }
+}
 
+@media (max-width: 991px){
+  #header-search {
+    display: none !important;
+  }
+}
 
 .second-header-top .search-bar .form-control{
   margin-left: auto;
- 
+  width: 300px;
 }
 
 .second-header-top .search-bar .btn{
