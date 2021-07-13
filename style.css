@@ -15,13 +15,26 @@
 }
 
 @media (min-width: 992px){
-  #navbar-search {
+  .navbar-search {
     display: none !important;
   }
 }
 
+@media (max-width: 604px){
+  .navbar-search {
+    width: 400px !important;
+  }
+}
+
+@media (max-width: 504px){
+  .navbar-search {
+    width: 300px !important;
+  }
+}
+
+
 @media (max-width: 991px){
-  #header-search {
+  .search-container {
     display: none !important;
   }
 }
@@ -94,6 +107,11 @@
             background-position: 100% center;
         }
 
+.navbar-search {
+  padding-bottom: 3px;
+  width: 500px;
+  margin: auto;
+}
 
 .item a {
   color: #353745;
