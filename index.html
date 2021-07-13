@@ -31,7 +31,7 @@
 					<div class="item px-2">
 						<a href="https://www.Instagram.com"><img src="Assets/Social_Media_Icons/instagram.png" alt="Instagram" height="25px"></a>
 					</div>
-				</div>
+				</div> 
 				<div class="column">
 					<div class="row" style="height: 35px;">
 						<div class="d-flex justify-content-between">
@@ -45,7 +45,7 @@
 					</div>
 					<div class="row">
 						<div class="item px-2" style="margin: auto; height: 25px;">
-							<p class="linear-wipe"><a href="http://maps.google.com/?q=64-68 Victoria St, Newton Stewart DG8 6DB" target="_blank" rel="noopener noreferrer"><img src="Assets/General_Icons/placeholder.png" alt="Location" height="25px">Newton Stewart</a></p>
+							<p class="linear-wipe" onclick="doScrolling('#map-container', 1000)"><img src="Assets/General_Icons/placeholder.png" alt="Location" height="25px">Newton Stewart</p>
 						</div>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 
 	<div class="second-header-top">
 		<div class="logo">
-		<a href="index.html"><img style="width: 20%; height: 20%;" src="C:\Users\ryand\Desktop\ScotLiving\ScotLiving-4\Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original on Transparent.png" class="img-fluid" alt="Scot Living"></a></div>
+		<a href="index.html"><img src="C:\Users\ryand\Desktop\ScotLiving\ScotLiving-4\Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original_on_Transparent_15.png" class="img-fluid" alt="Scot Living"></a></div>
 		<div class="search-container">
 			<input class="search-input" type="text" placeholder="Search for products & inspiration">
 		</div>
@@ -153,8 +153,9 @@
 		  </button></a>
 	</div>
 
-	<div class="map-container">
+	<div id="map-container" class="map-container">
 		<div class="business-info">
+			<div class="opening-times">
 			<h1>Opening Times</h1>
 			<h2>Monday: 09:00 - 17:00</h2>
 			<h2>Tuesday: 09:00 - 17:00</h2>
@@ -163,6 +164,13 @@
 			<h2>Friday: 09:00 - 17:00</h2>
 			<h2>Saturday: 09:00 - 17:00</h2>
 			<h2>Sunday: closed</h2>
+			</div>
+			<hr class="divider">
+			<div class="address">
+			<h3>64-68 Victoria St,</h3>
+			<h3>Newton Stewart,</h3>
+			<h3>DG8 6DB</h3>
+			</div>
 		</div>
 		<div class="map-div">
 			<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9163.09488982057!2d-4.4833357!3d54.9595295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x36eb7d674c45ac9!2sNorman%20Furnishings!5e0!3m2!1sen!2suk!4v1625054019827!5m2!1sen!2suk" title="" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -170,7 +178,7 @@
 	</div>
 
 	<!-- Optional JavaScript -->
-  <script type="text/javascript" src='script.js'> </script>
+  <script type="text/javascript" src='index.js'> </script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

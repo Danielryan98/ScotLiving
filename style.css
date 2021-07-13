@@ -4,7 +4,7 @@
   }
 
 .second-header-top img{
-  height: 200px;
+  height: 160px;
   padding-bottom: 10px;
 }
 
@@ -249,21 +249,48 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   padding-top: 20px;
-  background-image: linear-gradient(to bottom, rgba(255,0,0,0), #bfd9d7);
+  background-color: #353745;
 }
 
 .business-info {
   padding-right: 25px;
+  padding-left: 25px;
+  background-color: #bfd6d9;
+  border-radius: 30px 30px 30px 30px;
+  font-family: myFirstFont;
 }
 
 .business-info h1 {
   text-align: center;
+  font-weight: 600;
+  color: #353745;
 }
 
 .business-info h2 {
+  text-align: justify;
+  color: #353745;
+}
+
+.opening-times {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.divider {
+  border: 1px solid #353745;
+}
+
+.address {
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
+}
+
+.address h3 {
+  font-weight: 600;
+  color: #353745;
 }
 
 .map-div {
