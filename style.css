@@ -116,6 +116,34 @@
   text-decoration: none;
 }
 
+.linear-wipe {
+  background: linear-gradient(to right, #353745 80%, silver 85%, silver 90%, #353745 100%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: shine;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  5% {
+    background-position: 200% center;
+  }
+  6% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
  
 .nav-item {
 	font-size: 17px;
