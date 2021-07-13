@@ -39,7 +39,7 @@
 								<p><img src="Assets/General_Icons/telephone.png" alt="Telephone" height="25px">+0131625432</p>
 							</div>
 							<div class="item px-2">
-								<p class="linear-wipe"><a href="#"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</a></p>
+								<p id="myBtn" class="linear-wipe"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</p>
 							</div>
 						</div>
 					</div>
@@ -52,6 +52,17 @@
 			</div>
 		</div>
 	</header>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
 
 	<div class="second-header-top">
 		<div class="logo">
@@ -157,13 +168,13 @@
 		<div class="business-info">
 			<div class="opening-times">
 			<h1>Opening Times</h1>
-			<h2>Monday: 09:00 - 17:00</h2>
-			<h2>Tuesday: 09:00 - 17:00</h2>
-			<h2>Wednesday: closed</h2>
-			<h2>Thursday: 09:00 - 17:00</h2>
-			<h2>Friday: 09:00 - 17:00</h2>
-			<h2>Saturday: 09:00 - 17:00</h2>
-			<h2>Sunday: closed</h2>
+			<h2 id="Monday">Monday: 09:00 - 17:00</h2>
+			<h2 id="Tuesday">Tuesday: 09:00 - 17:00</h2>
+			<h2 id="Wednesday">Wednesday: closed</h2>
+			<h2 id="Thursday">Thursday: 09:00 - 17:00</h2>
+			<h2 id="Friday">Friday: 09:00 - 17:00</h2>
+			<h2 id="Saturday">Saturday: 09:00 - 17:00</h2>
+			<h2 id="Sunday">Sunday: closed</h2>
 			</div>
 			<hr class="divider">
 			<div class="address">
