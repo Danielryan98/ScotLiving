@@ -61,13 +61,6 @@
         margin: auto;
     }
     
-.search-title {
-        font-size: 22px;
-        font-weight: 900;
-        text-align: center;
-        color: #ff8b88;
-    }
-    
 .search-input {
         width: 100%;
         padding: 12px 24px;
@@ -280,11 +273,14 @@
 .card-body {
   padding: 0;
   text-align: left;
+  background-color: #353745;
+  color: #fcfcfc;
 }
 
 .card-title {
   font-size: medium;
   font-weight: bold;
+  color: #fcfcfc
 }
 
 .card-body p {
