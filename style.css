@@ -310,22 +310,30 @@
 } */
 
 
+
 @media (max-width: 1000px) {
   .card-columns.custom-columns {
       column-count: 1;
-      width: 500px;
+      margin: 0 !important;
+      width : 100vh;
+    max-width : 100%;
+    text-align: center;
+  }
+  .card {
+    max-width: 100%;
   }
 }
 @media (min-width: 1000px) {
   .card-columns.custom-columns {
       column-count: 2;
-      width: 1000px;
+      width: 914px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1420px) {
   .card-columns.custom-columns {
       column-count: 3;
-      width: 1500px;
+      width: 1400px;
+      column-gap: 2px;
   }
 }
 

@@ -85,16 +85,18 @@ function move(indexOfProduct){
 document.getElementById("app").innerHTML = `
 ${fabricSofasData.map(function(sofa){
     return `
-    <div class="card" style="width: 500px;">
+    <div class="card" style="width: 463px; margin-bottom: 3px; margin: auto;">
+    <div style="height: 315px;">
     <a href="javascript:move();">
-        <img class="product-photo" style="min-width: 100%;" src="${sofa.cataloguePhoto}">
+        <img class="product-photo" style="width: 100%; height: 100%;" src="${sofa.cataloguePhoto}">
         </a>
+        </div>
           <div class="card-body">
             <p id="prodName" class="card-title">${sofa.productName}</p>
             <p class="product-price">£${sofa.price}</p>
             <p class="product-description">Product Description</p>
           </div>
-          </div>
+    </div>
     `
 }).join('')}`
 
