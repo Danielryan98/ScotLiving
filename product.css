@@ -230,7 +230,7 @@
 .card-img-top {
   margin: auto;
   max-width: 100%;
-  height: auto;
+  height: 700px;
   width: auto;
 }
 
@@ -250,6 +250,9 @@
   margin: auto;
 }
 
+#product-name {
+  background-color: #353745 !important;
+}
 
 #card-one {
   border-top: none;
@@ -264,6 +267,7 @@
   border-right: none;
   border-bottom: none; 
   border-radius: 0 !important;
+  margin-left: 21px;
 }
 
 #card-two img {
@@ -276,7 +280,7 @@
 
 /* Style buttons */
 .btn-buy {
-  background-color: #bfd9d7; /* Blue background */
+  background-color: #226C3B; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 12px 16px; /* Some padding */
@@ -294,7 +298,7 @@
 }
 
 .btn-phone {
-  background-color: grey; /* Blue background */
+  background-color: #353745; /* Blue background */
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 12px 16px; /* Some padding */
