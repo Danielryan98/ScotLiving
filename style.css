@@ -32,6 +32,11 @@
   }
 }
 
+@media (max-width: 400px){
+  .navbar-search {
+    width: 240px !important;
+  }
+}
 
 @media (max-width: 991px){
   .search-container {
@@ -186,7 +191,6 @@
 }
 
 
-
 .nav-link {
   width: 127px;
   color: white;
@@ -336,6 +340,13 @@
       column-gap: 2px;
   }
 }
+@media (max-width: 1420px) {
+  .nav-link {
+    width: fit-content;
+    color: white;
+  }
+}
+
 
 
 
