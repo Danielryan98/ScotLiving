@@ -10,12 +10,12 @@
 
 @media (max-width: 600px) {
   .second-header-top img{
-    height: 15vh;
+    height: 130px;
   }
 }
 @media (max-width: 400px) {
   .second-header-top img{
-    height: 13vh;
+    height: 120px;
   }
 }
 
