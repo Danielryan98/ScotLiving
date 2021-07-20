@@ -315,7 +315,8 @@
   max-width: 100% !important;
   width: 1400px;
   height: auto;
-
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 
 .business-info {
@@ -327,6 +328,22 @@
   height: auto;
 }
 
+@media (max-width: 700px) {
+  .business-info {
+    min-width: 47vw;
+  }
+  .business-info h1 {
+    font-size: 4vw !important;
+  }
+  
+  .business-info h2 {
+    font-size: 4vw !important;
+  }
+  .address h3 {
+    font-size: 4vw !important;
+  }
+}
+
 .business-info h1 {
   text-align: center;
   font-weight: 600;
@@ -336,7 +353,10 @@
 }
 
 .business-info h2 {
+  width: 10.5em;
   text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
   color: #353745;
   font-size: 1.6vw;
   white-space: nowrap;
@@ -368,8 +388,8 @@
 
 .map-div {
   padding-left: 2vw;
-  min-width: 73%;
   max-width: 100%;
+  width: 1000px;
 }
 
 .map {
