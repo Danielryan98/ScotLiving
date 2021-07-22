@@ -260,17 +260,15 @@
   }
 }
 
+.shop-now-container {
+  display: inline;
+  position:relative;
+}
+
 .image-row {
-  max-width: 100%;
   text-align: center;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
-}
-
-@media (max-width: 1000px) {
-  .image-row {
-    
-  }
 }
 
 
@@ -283,6 +281,18 @@
   padding-right: 0.5%;
 }
 
+@media (max-width: 575px) {
+  .image-row img {
+    max-width: 33%;
+  }
+  #shop-now-one {
+    padding-bottom: 2%;
+  }
+  #shop-now-two {
+    padding-bottom: 2%;
+  }
+}
+
 .image-row a {
   position: relative;
   width: 351px;
@@ -293,36 +303,252 @@
 
 
 .image-row a .btn{
+  display: inline-block;
   position: absolute;
   z-index: 1;
-  right: 35%;
-  left: 35%;
-  top: 50%;
+  left: 34%;
+  top: 500%;
   border-color: white;
   color: white;
   border-radius: 0 !important;
+
 }
 
+@media (max-width: 1350px) {
+  .image-row a .btn{
+    left: 32%;
+    top: 475%;
+  }
+}
 @media (max-width: 1300px) {
-  .image-row .btn{
-    right: 15%;
-    left: 25%;
-    top: 50%;
+  .image-row a .btn{
+    left: 30%;
+    top: 440%;
   }
 }
-
 @media (max-width: 1200px) {
-  .image-row .btn{
-    right: 5%;
-    left: 25%;
-    top: 50%;
+  .image-row a .btn{
+    left: 28%;
+    top: 400%;
   }
 }
-
+@media (max-width: 1100px) {
+  .image-row a .btn{
+    left: 26%;
+    top: 350%;
+  }
+}
 @media (max-width: 1000px) {
-  .image-row .btn{
+  .image-row a .btn{
+    left: 24%;
+    top: 300%;
+  }
+}
+@media (max-width: 900px) {
+  .image-row a .btn{
+    left: 22%;
+    top: 250%;
+  }
+}
+@media (max-width: 850px) {
+  .image-row a .btn{
+    left: 20%;
+    top: 225%;
+  }
+}
+@media (max-width: 800px) {
+  .image-row a .btn{
+    left: 18%;
+    top: 200%;
+  }
+}
+@media (max-width: 750px) {
+  .image-row a .btn{
+    left: 13%;
+    top: 175%;
+  }
+}
+@media (max-width: 700px) {
+  .image-row a .btn{
+    left: 12%;
+    top: 150%;
+  }
+}
+@media (max-width: 650px) {
+  .image-row a .btn{
+    left: 9%;
+    top: 125%;
+  }
+}
+@media (max-width: 625px) {
+  .image-row a .btn{
+    left: 8%;
+    top: 125%;
+  }
+}
+@media (max-width: 600px) {
+  .image-row a .btn{
+    left: 6.5%;
+    top: 100%;
+  }
+}
+@media (max-width: 590px) {
+  .image-row a .btn{
     left: 5%;
-    top: 50%;
+    top: 100%;
+  }
+}
+@media (max-width: 580px) {
+  .image-row a .btn{
+    left: 4%;
+    top: 90%;
+  }
+}
+@media (max-width: 575px) {
+  .image-row a .btn{
+    left: 17%;
+    top: 200%;
+  }
+}
+@media (max-width: 550px) {
+  .image-row a .btn{
+    left: 16%;
+    top: 200%;
+  }
+}
+@media (max-width: 540px) {
+  .image-row a .btn{
+    left: 15.5%;
+    top: 200%;
+  }
+}
+@media (max-width: 530px) {
+  .image-row a .btn{
+    left: 14.5%;
+    top: 175%;
+  }
+}
+@media (max-width: 520px) {
+  .image-row a .btn{
+    left: 13.5%;
+    top: 175%;
+  }
+}
+@media (max-width: 510px) {
+  .image-row a .btn{
+    left: 12.5%;
+    top: 165%;
+  }
+}
+@media (max-width: 500px) {
+  .image-row a .btn{
+    left: 11.5%;
+    top: 150%;
+  }
+}
+@media (max-width: 490px) {
+  .image-row a .btn{
+    left: 11%;
+    top: 150%;
+  }
+}
+@media (max-width: 475px) {
+  .image-row a .btn{
+    left: 10.5%;
+    top: 140%;
+  }
+}
+@media (max-width: 470px) {
+  .image-row a .btn{
+    left: 10%;
+    top: 135%;
+  }
+}
+@media (max-width: 460px) {
+  .image-row a .btn{
+    left: 9%;
+    top: 125%;
+  }
+}
+@media (max-width: 455px) {
+  .image-row a .btn{
+    left: 8%;
+    top: 125%;
+  }
+}
+@media (max-width: 445px) {
+  .image-row a .btn{
+    left: 7%;
+    top: 125%;
+  }
+}
+@media (max-width: 435px) {
+  .image-row a .btn{
+    left: 6%;
+    top: 120%;
+  }
+}
+@media (max-width: 425px) {
+  .image-row a .btn{
+    left: 5%;
+  }
+}
+@media (max-width: 420px) {
+  .image-row a .btn{
+    left: 4.5%;
+  }
+}
+@media (max-width: 415px) {
+  .image-row a .btn{
+    left: 4%;
+  }
+}
+@media (max-width: 410px) {
+  .image-row a .btn{
+    left: 3%;
+    top: 110%;
+  }
+}
+@media (max-width: 400px) {
+  .image-row a .btn{
+    left: 9%;
+    top: 150%;
+    width: 80%;
+    font-size: 80%;
+  }
+}
+@media (max-width: 375px) {
+  .image-row a .btn{
+    left: 8%;
+    top: 125%;
+    width: 80%;
+    font-size: 80%;
+  }
+}
+@media (max-width: 355px) {
+  .image-row a .btn{
+    left: 8%;
+    top: 125%;
+    width: 80%;
+    font-size: 70%;
+  }
+}
+@media (max-width: 325px) {
+  .image-row a .btn{
+    left: 8%;
+    top: 110%;
+    font-size: 60%;
+  }
+}
+@media (max-width: 300px) {
+  .image-row a .btn{
+    font-size: 50%;
+  }
+}
+@media (max-width: 275px) {
+  .image-row a .btn{
+    font-size: 40%;
+    top: 100%;
   }
 }
 
@@ -331,6 +557,7 @@
   border-color: white;
   color: black;
 } 
+
 
 .map-container {
   padding-bottom: 2vh;
