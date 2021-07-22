@@ -227,10 +227,13 @@
 }
 
 .card-body-two {
-  padding-top: 1.25% !important;
   padding-bottom: 1.25% !important;
   padding-left: 1.25% !important;
   padding-right: 1.25% !important;
+}
+
+#card-two {
+  padding-top: 2%;
 }
 
 #adOne {
@@ -245,6 +248,9 @@
 @media (max-width: 1400px) {
   .column {
     width: 100%;
+  }
+  .card-body-one {
+    padding-bottom: 0 !important;
   }
   #card-one {
     margin: auto;
@@ -331,8 +337,40 @@
   margin: auto;
 }
 
-#product-name {
-  background-color: #353745 !important;
+#productName {
+  /* background-color: #353745 !important; */
+  color: #353745;
+  padding: 1vh;
+  font-family: myFirstFont;
+  font-weight: 700;
+  font-size: 175%;
+  margin-bottom: 0 !important;
+  /* white-space: nowrap; */
+}
+@media (max-width: 678px) {
+  #productName {
+    font-size: 150%;
+  }
+}
+@media (max-width: 585px) {
+  #productName {
+    font-size: 125%;
+  }
+}
+@media (max-width: 490px) {
+  #productName {
+    font-size: 100%;
+  }
+}
+@media (max-width: 400px) {
+  #productName {
+    font-size: 90%;
+  }
+}
+@media (max-width: 360px) {
+  #productName {
+    font-size: 80%;
+  }
 }
 
 #card-one {
@@ -349,6 +387,7 @@
   border-bottom: none; 
   border-radius: 0 !important;
   margin-left: 21px;
+  padding-top: 0 !important;
 }
 
 #card-two img {
@@ -357,6 +396,12 @@
 
 .product-price{
   margin-left: 20px;
+  margin-bottom: 0 !important;
+  color: rgb(211, 19, 19);
+  padding: 1vh;
+  font-family: myFirstFont;
+  font-weight: 1000;
+  font-size: 175%;
 }
 
 /* Style buttons */
