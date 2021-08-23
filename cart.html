@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Scot Living</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <!-- Optimal Internet Explorer compatibility -->
+  <meta charset="utf-8">
+
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <section id="home-page" style="background-color: #bfd6d9">
+		<!-- Header -->
+		<header>
+			<div class="container" style="min-width: 100%">
+				<div class="header-top d-flex justify-content-between pt-2">
+					<div id="socials" class="d-flex justify-content-between w-15">
+						<div class="item px-2">
+							<a href="https://www.Facebook.com"><img src="Assets/Social_Media_Icons/facebook.png" alt="Facebook" height="25px"></a>
+						</div>
+						<div class="item px-2">
+							<a href="https://www.Twitter.com"><img src="Assets/Social_Media_Icons/twitter.png" alt="Twitter" height="25px"></a>
+						</div>
+						<div class="item px-2">
+							<a href="https://www.Instagram.com"><img src="Assets/Social_Media_Icons/instagram.png" alt="Instagram" height="25px"></a>
+						</div>
+					</div> 
+					<div id="info-big" class="column">
+						<div class="row" style="height: 35px;">
+							<div class="d-flex justify-content-between">
+								<div class="item px-2">
+									<p style="color: #353745; font-family: myFirstFont;"><img src="Assets/General_Icons/telephone.png" alt="Telephone" height="25px">+0131625432</p>
+								</div>
+								<div class="item px-2">
+									<p data-toggle="modal" data-target="#form" class="linear-wipe"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="item px-2" style="margin: auto; height: 25px;">
+								<a href="index.html#map-container"><p class="linear-wipe"><img src="Assets/General_Icons/placeholder.png" alt="Location" height="25px">Newton Stewart</p></a>
+							</div>
+						</div>
+					</div>
+					<div id="info-small" class="column">
+						<div class="row" style="height: 35px;">
+							<div class="d-flex justify-content-between">
+								<div class="item px-2">
+									<a href="tel:+447522264097"><img src="Assets/General_Icons/telephone.png" alt="Telephone" height="25px"></a>
+								</div>
+								<div class="item px-2">
+									<img class="linear-wipe" onclick="doScrolling('#map-container', 1000)" src="Assets/General_Icons/placeholder.png" alt="Location" height="25px">
+								</div>
+								<div class="item px-2">
+									<p data-toggle="modal" data-target="#form" class="linear-wipe"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	
+		<div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+			  <div class="modal-content">
+				<div class="modal-header border-bottom-0">
+				  <h5 class="modal-title" id="exampleModalLabel">We'll call you as soon as we can...</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<form>
+				  <div class="modal-body">
+					<div class="form-group">
+					  <label class="form-label">First Name</label>
+					  <input class="details-input" type="text" placeholder="Enter name">
+					</div>
+					<div class="form-group">
+					  <label class="form-label">Surname</label>
+					  <input class="details-input" type="text" placeholder="Enter surname">
+					</div>
+					<div class="form-group">
+					  <label class="form-label">Telephone</label>
+					  <input class="details-input" type="text" placeholder="Enter your telephone number">
+					</div>
+				  </div>
+				  <div class="modal-footer border-top-0 d-flex justify-content-center">
+					<label type="submit" data-dismiss="modal" class="btn btn-primary btn-success">Call me back</label>
+				  </div>
+				</form>
+			  </div>
+			</div>
+		  </div>
+	</div>
+	
+		<div class="second-header-top">
+			<div class="logo">
+			<a href="index.html"><img src="Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original_on_Transparent_15.png" class="img-fluid" alt="Scot Living"></a></div>
+			<div class="search-container">
+				<input class="search-input" type="text" placeholder="Search for products & inspiration">
+			</div>
+		</div>
+	
+		
+		<nav class="navbar navbar-expand-lg navbar-light navbar-custom py-0" style="background-color: #353745; width: 100%;">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-search">
+				<input class="search-input" style="margin-top: 3px;" type="text" placeholder="Search for products">
+			</div>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+				  <a class="nav-link" href="#">Offers</a>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="fabricsofas.html">Fabric Sofas</a>
+				</li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Leather Sofas</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Corner Sofas</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Recliners</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Sofa Beds</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Dining</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Bedroom</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Beds</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Mattresses</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Help</a>
+				  </li>
+			  </ul>
+			</div>
+		</nav>
+
+        
+
+        <div class="row" style="padding-top: 0.25%; width: 100%; background-color: #bfd6d9; justify-content: center; margin: 0 !important;">
+            <div id="column-one" class="column" style="width: 50%;">
+                <div class="row" style="padding-bottom: 0.25%; width: 100%;">
+                    <div id="card-one" class="card" style="width: 100%; background-color: #bfd6d9;">
+                        <div class="row">
+                            <div class="column" style="width: 25%; height: 100%;">
+                                <img src="Pictures/fabric-11.jpg" alt="" style="height: 100%; width: 100%;">
+                            </div>
+                            <div class="column" style="padding-left: 0.5%; height: 100%; width: 25%;">
+                                <h5>San Antonio Option A Power 2 Corner 2 Corner</h5>
+                            </div>
+                            <div class="column" style="text-align: center; height: 100%; width: 10%;">
+                                <h5>£499</h5>
+                            </div>
+                            <div class="column" style="text-align: center; height: 100%; width: 10%;">
+                                <h5>1</h5>
+                            </div>
+                            <div class="column" style="text-align: center; height: 100%; width: 10%;">
+                                <h5>£599</h5>
+                            </div>
+                            <div class="column" style="text-align: center; height: 100%; width: 10%;">
+                                <h5>Delete</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding-bottom: 0.25%; width: 100%;">
+                    <div id="card-one" class="card" style="width: 100%; background-color: #bfd6d9;">
+                        <div class="row">
+                            <div class="column" style="width: 25%; height: 100%;">
+                                <img src="Pictures/fabric-12.jpg" alt="" style="height: 100%; width: 100%;">
+                            </div>
+                            <div class="column" style="height: 100%; width: 25%;">
+                                <h5>This is the product name</h5>
+                            </div>
+                            <div class="column" style="height: 100%; width: 25%;">
+                                <h5>£499</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="column-two" class="column">
+                <div id="card-two" class="card" style="width: 372px; background-color: #bfd6d9;">
+                    <div id="paypal-button-container"></div>
+                </div>
+            </div>
+        </div>
+
+    <div id="paypal-button-container"></div>
+
+    <div class="row" style="padding-top: 500px; justify-content: center;">
+        <div class="column" style="padding-left: 0.5%; padding-right: 0.5%;">
+          <h5>©ScotLiving 2021</h5>
+        </div>
+        <div class="column" style="padding-left: 0.5%; padding-right: 0.5%;">
+          <h5>Cookie Policy</h5>
+        </div>
+        <div class="column" style="padding-left: 0.5%; padding-right: 0.5%;">
+          <h5>Terms & Conditions</h5>
+        </div>
+        <div class="column" style="padding-left: 0.5%; padding-right: 0.5%;">
+          <h5>Privacy Policy</h5>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+  <script type="text/javascript" src='products.js'> </script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+    <script
+    src="https://www.paypal.com/sdk/js?client-id=ATzGIzyErq7G5-VGYWu3yWj_8zlTL1mp8qZyVoHr2MMUPtZKOnP0ucftahUl9EkB9vFwmCXQESEL2uzW"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+  </script>
+
+<script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        // This function sets up the details of the transaction, including the amount and line item details.
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '0.01'
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        // This function captures the funds from the transaction.
+        return actions.order.capture().then(function(details) {
+          // This function shows a transaction success message to your buyer.
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container');
+    //This function displays Smart Payment Buttons on your web page.
+  </script>
+</body>
+</section>
+
