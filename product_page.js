@@ -1,4 +1,5 @@
 window.onload = function () {
+  //  localStorage.clear();
     buildImages();
     document.getElementById("productName").innerHTML=(fabricSofasData[productNumber].productName);
     document.getElementById("price").innerHTML='£'+(fabricSofasData[productNumber].price);
@@ -51,3 +52,48 @@ window.onclick = function(event) {
       modal.style.display = "none";
     }
   }
+
+// Checkout related code
+//Get the product added to basket
+document.getElementById("buy-btn").addEventListener("click", function() {
+  console.log('added to cart' + productNumber);
+  cartNumbers();
+});
+
+function cartNumbers() {
+  console.log('clicked product', productNumber);
+  let productNumbers = localStorage.getItem('cartNumbers');
+
+  productNumbers = parseInt(productNumbers);
+
+  if(productNumbers){
+    localStorage.setItem('cartNumbers', productNumbers + 1);
+  } else {
+    localStorage.setItem('cartNumbers', 1);
+  }
+  setItems(fabricSofasData);
+  
+}
+
+//PROBLEM RIGHT NOW IS I CANT KEEP INCART TO STICK TO ITS NUMBER.
+function setItems(fabricSofasData) {
+  let cartItems = localStorage.getItem('productsInCart');
+  cartItems = JSON.parse(cartItems);
+
+  if(cartItems != null){
+    productNumber.inCart += 1;
+    fabricSofasData[productNumber].inCart += 1;
+    cartItems = {
+      [productNumber.productName] : fabricSofasData[productNumber]
+    }
+  } else {
+    productNumber.inCart = 1;
+    fabricSofasData[productNumber].inCart = 1;
+  cartItems = {
+    [productNumber.productName] : fabricSofasData[productNumber]
+  }
+  }  
+  
+  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+  
+}
