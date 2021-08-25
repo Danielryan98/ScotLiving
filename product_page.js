@@ -1,5 +1,5 @@
 window.onload = function () {
-  //  localStorage.clear();
+    //localStorage.clear();
     buildImages();
     document.getElementById("productName").innerHTML=(fabricSofasData[productNumber].productName);
     document.getElementById("price").innerHTML='£'+(fabricSofasData[productNumber].price);
@@ -81,19 +81,23 @@ function setItems(fabricSofasData) {
   cartItems = JSON.parse(cartItems);
 
   if(cartItems != null){
-    productNumber.inCart += 1;
-    fabricSofasData[productNumber].inCart += 1;
-    cartItems = {
-      [productNumber.productName] : fabricSofasData[productNumber]
+
+    if(cartItems[productNumber] == undefined) {
+      cartItems = {
+        ...cartItems,
+        [productNumber]: fabricSofasData[productNumber]
+      }
     }
+    cartItems[fabricSofasData.productNumber].inCart += 1;
   } else {
-    productNumber.inCart = 1;
     fabricSofasData[productNumber].inCart = 1;
-  cartItems = {
-    [productNumber.productName] : fabricSofasData[productNumber]
+    cartItems = {
+      [fabricSofasData.productNumber]: fabricSofasData[productNumber]
+    }
   }
-  }  
   
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
   
 }
+
+onLoadCartNumbers();
