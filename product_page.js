@@ -58,6 +58,7 @@ window.onclick = function(event) {
 document.getElementById("buy-btn").addEventListener("click", function() {
   console.log('added to cart' + productNumber);
   cartNumbers();
+  totalCost(fabricSofasData[productNumber]);
 });
 
 function cartNumbers() {
@@ -98,6 +99,19 @@ function setItems(fabricSofasData) {
   
   localStorage.setItem("productsInCart", JSON.stringify(cartItems));
   
+}
+
+function totalCost(product){
+
+  let cartCost = localStorage.getItem('totalCost');
+
+  if(cartCost != null) {
+    cartCost = parseInt(cartCost);
+    localStorage.setItem("totalCost", cartCost + product.price);
+  } else {
+    localStorage.setItem("totalCost", product.price);
+  }
+
 }
 
 onLoadCartNumbers();
