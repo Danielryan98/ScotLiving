@@ -82,17 +82,17 @@ function setItems(fabricSofasData) {
 
   if(cartItems != null){
 
-    if(cartItems[productNumber] == undefined) {
+    if(cartItems[fabricSofasData[productNumber].productName] == undefined) {
       cartItems = {
         ...cartItems,
-        [productNumber]: fabricSofasData[productNumber]
+        [fabricSofasData[productNumber].productName]: fabricSofasData[productNumber]
       }
     }
-    cartItems[fabricSofasData.productNumber].inCart += 1;
+    cartItems[fabricSofasData[productNumber].productName].inCart += 1;
   } else {
     fabricSofasData[productNumber].inCart = 1;
     cartItems = {
-      [fabricSofasData.productNumber]: fabricSofasData[productNumber]
+      [fabricSofasData[productNumber].productName]: fabricSofasData[productNumber]
     }
   }
   
