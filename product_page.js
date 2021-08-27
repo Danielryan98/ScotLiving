@@ -76,7 +76,6 @@ function cartNumbers() {
   
 }
 
-//PROBLEM RIGHT NOW IS I CANT KEEP INCART TO STICK TO ITS NUMBER.
 function setItems(fabricSofasData) {
   let cartItems = localStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
