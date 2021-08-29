@@ -31,7 +31,7 @@ function displayCart() {
                                 <h5 id="total-product-cost">£${(item.inCart)*(item.price)}</h5>
                             </div>
                             <div class="column" style="text-align: center; height: 100%; width: 10%;">
-                                <h5>Remove</h5>
+                                <h5 id"remove-product">Remove</h5>
                             </div>
                         </div>
                     </div>
@@ -49,4 +49,23 @@ function displayCart() {
     }
   }
 
+  
   displayCart();
+
+
+
+  //PROBLEM IS THE REMOVE-PRODUCT DOESNT EXIST WHEN THIS RUNS :( window.onload for display cart doesnt work
+  document.getElementById("remove-product").addEventListener("click", function() {
+    console.log("clicked remove");
+    let cartProductName = document.querySelector("#product-name");
+    removeProduct(cartProductName);
+  });
+  
+  function removeProduct(cartProductName) {
+    for(let i = 0; i <cartItems.length; i++){
+      if(cartItems[i].productName === cartProductName){
+        cartItems.splice(i, 1)
+        return
+      }
+    }
+  }

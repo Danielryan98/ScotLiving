@@ -114,4 +114,5 @@ function totalCost(product){
 }
 
 
+
 onLoadCartNumbers();
