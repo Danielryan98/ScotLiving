@@ -59,9 +59,9 @@ function removeProduct(name){
     delete cartItems[name];
     console.log(cartItems);
     window.localStorage.productsInCart = JSON.stringify(cartItems);
-    location.reload();
-return false;
+    $('#cart-container').load(document.URL +  ' #cart-container');
 }
+
 
 
 
