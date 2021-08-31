@@ -113,6 +113,5 @@ function totalCost(product){
 
 }
 
-
-
 onLoadCartNumbers();
+

@@ -6,7 +6,7 @@ function displayCart() {
     let totalContainerOne = document.querySelector("#total-cost");
     let totalContainerTwo = document.querySelector("#order-total");
     let cartCost = localStorage.getItem('totalCost');
-    if(cartItems && productContainer ) {
+    if (cartItems && productContainer) {
         productContainer.innerHTML = '';
         subtotalContainer.innerHTML = '';
         totalContainerOne.innerHTML = '';
@@ -31,7 +31,7 @@ function displayCart() {
                                 <h5 id="total-product-cost">£${(item.inCart)*(item.price)}</h5>
                             </div>
                             <div class="column" style="text-align: center; height: 100%; width: 10%;">
-                                <h5 id"remove-product">Remove</h5>
+                                <h5 id"remove-product" onclick="removeProduct('Patterdale Velvet Left Hand Facing Small Chaise Sofa');">Remove</h5>
                             </div>
                         </div>
                     </div>
@@ -47,25 +47,50 @@ function displayCart() {
         £${cartCost}
         `
     }
-  }
+}
 
+
+displayCart();
+
+function removeProduct(name){
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    console.log(cartItems);
+    delete cartItems[name];
+    console.log(cartItems);
+    window.localStorage.productsInCart = JSON.stringify(cartItems);
+    location.reload();
+return false;
+}
+
+
+
+// function removeProducts(name){
+//     // localStorage.removeItem('productsInCart');
+//     let cartItems = localStorage.getItem('productsInCart');
+//     cartItems = JSON.parse(cartItems);  //read and convert to object
+//     var delKey = name;  //key to remove
+//     if (cartItems[name]) {  //check if key exists
+//         delete cartItems[name];  //remove the key from object
+//     }
+    
+// }
+
+//   //PROBLEM IS THE REMOVE-PRODUCT DOESNT EXIST WHEN THIS RUNS :( window.onload for display cart doesnt work
+//   document.getElementById("remove-product").addEventListener("click", function() {
+//     console.log("clicked remove");
+//     let cartProductName = document.querySelector("#product-name");
+//     removeProduct(cartProductName);
+//   });
   
-  displayCart();
-
-
-
-  //PROBLEM IS THE REMOVE-PRODUCT DOESNT EXIST WHEN THIS RUNS :( window.onload for display cart doesnt work
-  document.getElementById("remove-product").addEventListener("click", function() {
-    console.log("clicked remove");
-    let cartProductName = document.querySelector("#product-name");
-    removeProduct(cartProductName);
-  });
-  
-  function removeProduct(cartProductName) {
-    for(let i = 0; i <cartItems.length; i++){
-      if(cartItems[i].productName === cartProductName){
-        cartItems.splice(i, 1)
-        return
-      }
-    }
-  }
+//   function removeProduct(cartProductName) {
+//     let cartItems = localStorage.getItem('productsInCart');
+//     cartItems = JSON.parse(cartItems);
+//     console.log("clicked remove");
+//     for(let i = 0; i <cartItems.length; i++){
+//       if(cartItems[i].productName === cartProductName){
+//         cartItems.splice(i, 1)
+//         return
+//       }
+//     }
+//   }
