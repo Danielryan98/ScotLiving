@@ -31,7 +31,7 @@ function displayCart() {
                                 <h5 id="total-product-cost">£${(item.inCart)*(item.price)}</h5>
                             </div>
                             <div class="column" style="text-align: center; height: 100%; width: 10%;">
-                                <h5 id="remove-product" onclick="removeProduct('Patterdale Velvet Left Hand Facing Small Chaise Sofa');">Remove</h5>
+                                <h5 id="remove-product" data-name"${item.productName}" onclick="removeProduct(${item.productName});">Remove</h5>
                             </div>
                         </div>
                     </div>
@@ -58,6 +58,8 @@ displayCart();
 
 
 function removeProduct(name){
+    name = JSON.parse(name);
+    console.log(name);
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
     let cartCost = localStorage.getItem('totalCost');
