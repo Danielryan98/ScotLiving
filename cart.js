@@ -24,14 +24,20 @@ function displayCart() {
                             <div class="column" style="text-align: center; height: 100%; width: 10%;">
                                 <h5 id="product-price">£${item.price}</h5>
                             </div>
-                            <div class="column" style="text-align: center; height: 100%; width: 10%;">
+                            <div class="column" style="text-align: center; height: 100%; width: 2.5%;">
+                                <h5 id="decrease-quantity" onclick="decreaseQuantity('${item.productName}');">-</h5>
+                            </div>
+                            <div class="column" style="text-align: center; height: 100%; width: 5%;">
                                 <h5 id="product-quantity">${item.inCart}</h5>
+                            </div>
+                            <div class="column" style="text-align: center; height: 100%; width: 2.5%;">
+                                <h5 id="increase-quantity" onclick="increaseQuantity('${item.productName}');">+</h5>
                             </div>
                             <div class="column" style="text-align: center; height: 100%; width: 10%;">
                                 <h5 id="total-product-cost">£${(item.inCart)*(item.price)}</h5>
                             </div>
                             <div class="column" style="text-align: center; height: 100%; width: 10%;">
-                                <h5 id="remove-product" data-name"${item.productName}" onclick="removeProduct('${item.productName}');">Remove</h5>
+                                <h5 id="remove-product" onclick="removeProduct('${item.productName}');">Remove</h5>
                             </div>
                         </div>
                     </div>
@@ -55,7 +61,58 @@ function displayCart() {
 
 displayCart();
 
+function increaseQuantity(name) {
+    let cartNumbers = localStorage.getItem('cartNumbers');
+    cartNumbers = parseInt(cartNumbers);
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    let cartCost = localStorage.getItem('totalCost');
+    cartCost = parseInt(cartCost);
+    productPrice = parseInt(cartItems[name].price);
+    productQuantity = parseInt(cartItems[name].inCart);
+    //will have if(cartItems[name].inCart < cartItems[name].inStock)
+        localStorage.setItem("totalCost", cartCost + productPrice);
+        localStorage.setItem("cartNumbers", cartNumbers + 1);
+        cartItems[name].inCart = productQuantity + 1;
+        window.localStorage.productsInCart = JSON.stringify(cartItems);
+        displayCart();
+        $('#cart-container').load(document.URL +  ' #cart-container');
+        $('#subtotal').load(document.URL +  ' #subtotal');
+        $('#total-cost').load(document.URL +  ' #total-cost');
+        $('#order-total').load(document.URL +  ' #order-total');
+}
 
+function decreaseQuantity(name) {
+    let cartNumbers = localStorage.getItem('cartNumbers');
+    cartNumbers = parseInt(cartNumbers);
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    let cartCost = localStorage.getItem('totalCost');
+    cartCost = parseInt(cartCost);
+    productPrice = parseInt(cartItems[name].price);
+    productQuantity = parseInt(cartItems[name].inCart);
+    if(cartItems[name].inCart > 1){
+        localStorage.setItem("totalCost", cartCost - productPrice);
+        localStorage.setItem("cartNumbers", cartNumbers - 1);
+        cartItems[name].inCart = productQuantity - 1;
+        window.localStorage.productsInCart = JSON.stringify(cartItems);
+        displayCart();
+        $('#cart-container').load(document.URL +  ' #cart-container');
+        $('#subtotal').load(document.URL +  ' #subtotal');
+        $('#total-cost').load(document.URL +  ' #total-cost');
+        $('#order-total').load(document.URL +  ' #order-total');
+    } else if(cartItems[name].inCart = 1){
+        localStorage.setItem("totalCost", cartCost - productPrice);
+        localStorage.setItem("cartNumbers", cartNumbers - 1);
+        delete cartItems[name];
+        window.localStorage.productsInCart = JSON.stringify(cartItems);
+        displayCart();
+        $('#cart-container').load(document.URL +  ' #cart-container');
+        $('#subtotal').load(document.URL +  ' #subtotal');
+        $('#total-cost').load(document.URL +  ' #total-cost');
+        $('#order-total').load(document.URL +  ' #order-total');
+    }
+}
 
 function removeProduct(name){
     console.log(name);
@@ -71,6 +128,7 @@ function removeProduct(name){
     localStorage.setItem("cartNumbers", cartNumbers - cartItems[name].inCart);
     delete cartItems[name];
     window.localStorage.productsInCart = JSON.stringify(cartItems);
+    displayCart();
     $('#cart-container').load(document.URL +  ' #cart-container');
     $('#subtotal').load(document.URL +  ' #subtotal');
     $('#total-cost').load(document.URL +  ' #total-cost');
