@@ -443,9 +443,9 @@
   border-radius: 3px;
 }
 
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: RoyalBlue;
+.btn-buy:focus {
+  border: none;
+  outline: none !important;
 }
 
 .btn-phone {
@@ -458,6 +458,11 @@
   cursor: pointer; /* Mouse pointer on hover */
   min-width: 100%;
   border-radius: 3px;
+}
+
+.btn-phone:focus {
+  border: none;
+  outline: none !important;
 }
 
 /* The Modal (background) */
@@ -582,3 +587,4 @@
       border-radius: 0;
       background-position: 100% center;
   }
+

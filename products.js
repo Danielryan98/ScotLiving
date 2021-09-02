@@ -85,6 +85,13 @@ const fabricSofasData = [
     }
 ];
 
+
+function setColour() {
+    var property = document.getElementById("buy-btn");
+    property.style.backgroundColor = "blue";
+    property.innerText = "Added to Basket";
+}
+
 function move(indexOfProduct){
     window.open("product.html","_self");
 }
@@ -124,5 +131,6 @@ function checkIndex(event){
   var indexOfProduct = Array.from(checks).indexOf(event.target);
   localStorage.setItem("productIndex", indexOfProduct);
 }
+
 
 
