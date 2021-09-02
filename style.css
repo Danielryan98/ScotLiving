@@ -214,19 +214,38 @@
   background-color: #353745;
 }
 
+.navbar-nav .nav-item #checkout-link {
+  margin: auto;
+  background-color: rgb(10, 75, 0);
+}
+
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     background-color: white;
+}
+
+.navbar-custom .nav-item.active #checkout-link,
+.navbar-custom .nav-item:hover #checkout-link {
+    background-color: green;
 }
 
 .navbar-custom .navbar-nav .nav-item .nav-link {
     color: white;
 }
 
+.navbar-custom .navbar-nav .nav-item #checkout-link {
+  color: white;
+  font-weight: 400;
+}
+
 
 .nav-link {
   width: 127px;
   color: white;
+}
+
+#checkout-link {
+  color: black;
 }
 
 .carousel-item img {
