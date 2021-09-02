@@ -55,11 +55,9 @@ function displayCart() {
     }
 }
 
-// let cartCost = localStorage.getItem('totalCost')
-// cartCost = parseInt(cartCost);
-// localStorage.setItem("totalCost", cartCost + product.price);
 
 displayCart();
+
 
 function increaseQuantity(name) {
     let cartNumbers = localStorage.getItem('cartNumbers');
@@ -76,10 +74,6 @@ function increaseQuantity(name) {
         cartItems[name].inCart = productQuantity + 1;
         window.localStorage.productsInCart = JSON.stringify(cartItems);
         displayCart();
-        $('#cart-container').load(document.URL +  ' #cart-container');
-        $('#subtotal').load(document.URL +  ' #subtotal');
-        $('#total-cost').load(document.URL +  ' #total-cost');
-        $('#order-total').load(document.URL +  ' #order-total');
 }
 
 function decreaseQuantity(name) {
@@ -97,20 +91,12 @@ function decreaseQuantity(name) {
         cartItems[name].inCart = productQuantity - 1;
         window.localStorage.productsInCart = JSON.stringify(cartItems);
         displayCart();
-        $('#cart-container').load(document.URL +  ' #cart-container');
-        $('#subtotal').load(document.URL +  ' #subtotal');
-        $('#total-cost').load(document.URL +  ' #total-cost');
-        $('#order-total').load(document.URL +  ' #order-total');
     } else if(cartItems[name].inCart = 1){
         localStorage.setItem("totalCost", cartCost - productPrice);
         localStorage.setItem("cartNumbers", cartNumbers - 1);
         delete cartItems[name];
         window.localStorage.productsInCart = JSON.stringify(cartItems);
         displayCart();
-        $('#cart-container').load(document.URL +  ' #cart-container');
-        $('#subtotal').load(document.URL +  ' #subtotal');
-        $('#total-cost').load(document.URL +  ' #total-cost');
-        $('#order-total').load(document.URL +  ' #order-total');
     }
 }
 
@@ -129,8 +115,4 @@ function removeProduct(name){
     delete cartItems[name];
     window.localStorage.productsInCart = JSON.stringify(cartItems);
     displayCart();
-    $('#cart-container').load(document.URL +  ' #cart-container');
-    $('#subtotal').load(document.URL +  ' #subtotal');
-    $('#total-cost').load(document.URL +  ' #total-cost');
-    $('#order-total').load(document.URL +  ' #order-total');
 }
