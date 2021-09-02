@@ -250,6 +250,12 @@
   padding-right: 1.25% !important;
 }
 
+.basket-phone-container {
+  padding-bottom: 1.25% !important;
+  padding-left: 1.25% !important;
+  padding-right: 1.25% !important;
+}
+
 #card-two {
   padding-top: 2%;
 }
@@ -413,10 +419,11 @@
 }
 
 .product-price{
-  margin-left: 20px;
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   margin-bottom: 0 !important;
   color: rgb(211, 19, 19);
-  padding: 1vh;
   font-family: myFirstFont;
   font-weight: 1000;
   font-size: 175%;
@@ -432,7 +439,7 @@
   text-align: start;
   cursor: pointer; /* Mouse pointer on hover */
   min-width: 100%;
-  margin-bottom: 5%;
+  margin-bottom: 1.25%;
   border-radius: 3px;
 }
 

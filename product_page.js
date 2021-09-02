@@ -3,6 +3,7 @@ window.onload = function () {
     buildImages();
     document.getElementById("productName").innerHTML=(fabricSofasData[productNumber].productName);
     document.getElementById("price").innerHTML='£'+(fabricSofasData[productNumber].price);
+    document.getElementById("name-of-product").innerHTML=(fabricSofasData[productNumber].productName);
 };
 
 function buildImages() {
