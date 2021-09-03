@@ -4,7 +4,27 @@ window.onload = function () {
     document.getElementById("productName").innerHTML=(fabricSofasData[productNumber].productName);
     document.getElementById("price").innerHTML='£'+(fabricSofasData[productNumber].price);
     document.getElementById("name-of-product").innerHTML=(fabricSofasData[productNumber].productName);
-};
+    let cartItems = localStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
+    if(cartItems[fabricSofasData[productNumber].productName].inCart > 0){
+      document.getElementById("basket-phone-container").innerHTML = `
+      <button id="buy-btn" class="btn-buy" style="background-color: blue;" onclick="setColour()";><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em>Added to Basket</button>
+            <button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 2%; padding-left: 1%;"></em> Order by Phone</button>
+            <img id="adOne" src="Pictures/sale.png" alt="">
+            <img id="adTwo" src="Pictures/chair.png" alt="">
+            `
+    }
+}
+
+function setColour() {
+    document.getElementById("basket-phone-container").innerHTML = `<button id="buy-btn" class="btn-buy" style="background-color: blue !important;" onclick="setColour()";><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em>Added to Basket</button>
+					<button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 2%; padding-left: 1%;"></em> Order by Phone</button>
+					<img id="adOne" src="Pictures/sale.png" alt="">
+					<img id="adTwo" src="Pictures/chair.png" alt="">
+          `;
+          addToCart();
+          
+}
 
 function buildImages() {
     var img = document.getElementById("bigImg")
@@ -56,11 +76,11 @@ window.onclick = function(event) {
 
 // Checkout related code
 //Get the product added to basket
-document.getElementById("buy-btn").addEventListener("click", function() {
-  console.log('added to cart' + productNumber);
+function addToCart(){
   cartNumbers();
   totalCost(fabricSofasData[productNumber]);
-});
+}
+
 
 function cartNumbers() {
   console.log('clicked product', productNumber);
