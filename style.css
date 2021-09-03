@@ -205,8 +205,81 @@
     padding-top: 3px;
 }
 
+
+.carousel-item img {
+	width: 100%;
+  height: auto;
+  }
+
+.carousel {
+  width: 100%;
+  height: auto !important;
+  margin: auto;
+}
 .carousel-inner {
-  height: 625px;
+  width: 100%;
+  height: auto !important;
+}
+.d-block{
+  height: auto !important;
+}
+
+@media (max-height: 1079px) and (min-width: 1890px) {
+  .carousel-item img {
+    width: 90%;
+    height: auto;
+    }
+    
+  .carousel {
+    width: 90%;
+    height: auto !important;
+    margin: auto;
+  }
+  .carousel-inner {
+    width: 90%;
+    height: auto !important;
+  }
+  .d-block{
+    height: auto !important;
+  }
+}
+@media (max-height: 1000px) and (min-width: 1890px){
+  .carousel-item img {
+    width: 85%;
+    height: auto;
+    }
+    
+  .carousel {
+    width: 85%;
+    height: auto !important;
+    margin: auto;
+  }
+  .carousel-inner {
+    width: 85%;
+    height: auto !important;
+  }
+  .d-block{
+    height: auto !important;
+  }
+}
+@media (max-height: 970px) and (min-width: 1890px) {
+  .carousel-item img {
+    width: 80%;
+    height: auto;
+    }
+    
+  .carousel {
+    width: 80%;
+    height: auto !important;
+    margin: auto;
+  }
+  .carousel-inner {
+    width: 80%;
+    height: auto !important;
+  }
+  .d-block{
+    height: auto !important;
+  }
 }
 
 .navbar-nav {
@@ -248,10 +321,7 @@
   color: black;
 }
 
-.carousel-item img {
-	width: 100%;
-  height: auto;
-  }
+
 
 .img-fluid {
   padding-bottom: 20px;
@@ -735,18 +805,7 @@
   }
 }
 
-.carousel {
-    width: 100%;
-    height: auto !important;
-    margin: auto;
-  }
-  .carousel-inner {
-    width: 100%;
-    height: auto !important;
-  }
-  .d-block{
-    height: auto !important;
-  }
+
 
 
 
