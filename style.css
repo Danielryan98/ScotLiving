@@ -907,3 +907,7 @@
       border-radius: 0;
       background-position: 100% center;
   }
+
+  #remove-product:hover {
+    cursor: pointer;
+  }

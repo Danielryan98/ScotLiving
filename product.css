@@ -43,6 +43,8 @@
   margin: auto;
 }
 
+
+
 @media (min-width: 992px){
   .navbar-search {
     display: none !important;
