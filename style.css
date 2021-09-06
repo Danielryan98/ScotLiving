@@ -203,8 +203,12 @@
     position: relative;
     margin: auto;
     padding-top: 3px;
+    padding-bottom: 3px;
 }
 
+.image-row {
+  display: none !important;
+}
 
 .carousel-item img {
 	width: 100%;
@@ -222,6 +226,13 @@
 }
 .d-block{
   height: auto !important;
+}
+
+@media (max-width: 1300px) {
+  .slideshow {
+      padding-top: 0px;
+      padding-bottom: 0px;
+  }
 }
 
 @media (max-width: 1300px) {
