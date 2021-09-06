@@ -911,3 +911,26 @@
   #remove-product:hover {
     cursor: pointer;
   }
+
+  #decrease-quantity:hover {
+    cursor: pointer;
+  }
+
+  #increase-quantity:hover {
+    cursor: pointer;
+  }
+
+  #remove-product::selection {
+    color: none;
+    background: none;
+}
+
+#decrease-quantity::selection {
+  color: none;
+  background: none;
+}
+
+#increase-quantity::selection {
+  color: none;
+  background: none;
+}
