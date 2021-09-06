@@ -158,7 +158,7 @@
 
         
 
-        <div class="row" style="padding-top: 0.25%; width: 100%; background-color: #bfd6d9; justify-content: center; margin: 0 !important;">
+        <div id="cart-row" class="row" style="padding-top: 0.25%; width: 100%; background-color: #bfd6d9; justify-content: center; margin: 0 !important;">
             <div id="column-one" class="column" style="width: 50%; padding-right: 1%;">
 				<div class="card" style="width: 100%; background-color: transparent; border-top: none; border-left: none; border-right: none; border-radius: 0; border-color: #353745;">
 					<div class="row" style="width: 100%; height: 5vh !important; margin: auto;">
@@ -166,19 +166,19 @@
 
 						</div>
 						<div class="column" style="height: 100%; width: 35%;">
-							<p style="margin:auto; padding-top: 3%; padding-left: 0.5%;">Product Name</p>
+							<p id="header-product-name" style="margin:auto; padding-top: 3%; padding-left: 0.5%;">Product Name</p>
 						</div>
 						<div class="column" style="height: 100%; width: 10%;">
-							<div class="row" style="height: 40%; margin: auto;"><p style="margin: auto; padding-top: 2%;">Product</p></div>
-							<div class="row" style="height: 40%; margin: auto;"><p style="margin: auto; padding-top: 2%;">Cost</p></div>
+							<div class="row" style="height: 40%; margin: auto;"><p id="header-product-cost-one" style="margin: auto; padding-top: 2%;">Product</p></div>
+							<div class="row" style="height: 40%; margin: auto;"><p id="header-product-cost-two" style="margin: auto; padding-top: 2%;">Cost</p></div>
 						</div>
 						<div class="column" style="height: 100%; width: 10%;">
-							<div class="row" style="height: 40%; margin: auto;"><p style="margin: auto; padding-top: 2%;">Product</p></div>
-							<div class="row" style="height: 40%; margin: auto;"><p style="margin: auto; padding-top: 2%;">Quantity</p></div>
+							<div class="row" style="height: 40%; margin: auto;"><p id="header-product-quantity-one" style="margin: auto; padding-top: 2%;">Product</p></div>
+							<div class="row" style="height: 40%; margin: auto;"><p id="header-product-quantity-two" style="margin: auto; padding-top: 2%;">Quantity</p></div>
 						</div>
 						<div class="column" style="height: 100%; width: 10%;">
-							<div class="row" style="height: 40%; margin: auto;"><p style="margin: auto; padding-top: 2%;">Total</p></div>
-							<div class="row" style="height: 40%; margin: auto;"><p style="margin: auto; padding-top: 2%;">Cost</p></div>
+							<div class="row" style="height: 40%; margin: auto;"><p id="header-product-total-cost-one" style="margin: auto; padding-top: 2%;">Total</p></div>
+							<div class="row" style="height: 40%; margin: auto;"><p id="header-product-total-cost-two" style="margin: auto; padding-top: 2%;">Cost</p></div>
 						</div>
 					</div>
 				</div>
@@ -191,18 +191,18 @@
 					<div class="column" style="width: 25%; margin-left: auto;">
 						<div class="card" style="background-color: transparent; border-top: none; border-left: none; border-right: none; border-radius: 0; border-color: #353745;">
 							<div class="row" style="width: 100%; margin: auto;">
-							<div class="column" style="width: 40%">
-								<p style="margin: 0;">Subtotal:</p>
+							<div class="column" style="width: 45%">
+								<p id="subtotal-text" style="margin: 0;">Subtotal:</p>
 							</div>
-							<div class="column" style="width: 60%; text-align: end;">
+							<div class="column" style="width: 55%; text-align: end;">
 								<p id="subtotal" style="margin: 0; font-weight: 500;">£0.00</p>
 							</div>
 							</div>
 							<div class="row" style="width: 100%; margin: auto; padding-bottom: 2%;">
-								<div class="column" style="width: 40%">
-									<p style="margin: 0;">Shipping:</p>
+								<div class="column" style="width: 45%">
+									<p id="shipping-text" style="margin: 0;">Shipping:</p>
 								</div>
-								<div class="column" style="width: 60%; text-align: end;">
+								<div class="column" style="width: 55%; text-align: end;">
 									<p id="shipping-cost" style="margin: 0; font-weight: 500;">TBC</p>
 								</div>
 							</div>
@@ -211,13 +211,13 @@
 				</div>
 				<div class="row" style="width: 100%; margin: auto;">
 					<div class="column">
-						<a style="text-decoration: none; color: black;" href="index.html"><p style="font-weight: 800;">< Continue Shopping</p></a>
+						<a id="continue-shopping" style="text-decoration: none; color: black;" href="index.html"><p style="font-weight: 800;">< Continue Shopping</p></a>
 					</div>
 					<div class="column" style="width: 25%; margin-left: auto;">
 						<div class="card" style="background-color: transparent; border-top: none; border-left: none; border-right: none; border-radius: 0; border-color: #353745;">
 							<div class="row" style="width: 100%; margin: auto;">
 								<div class="column" style="padding-top: 2%; padding-bottom: 2%; width: 40%; height: 100%;">
-									<p style="margin: 0; font-weight: 800;">Total:</p>
+									<p id="total" style="margin: 0; font-weight: 800;">Total:</p>
 								</div>
 								<div class="column" style="padding-top: 2%; padding-bottom: 2%; width: 60%; height: 100%; text-align: end;">
 									<p id="total-cost" style="margin: 0; font-weight: 800;">£0.00</p>
