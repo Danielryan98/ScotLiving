@@ -10,10 +10,15 @@ const fabricSofasData = [
         photoFour: "Pictures/orka4.jpg"
     },
     {
-        productName: "Product numero 9",
-        price: 500,
+        productName: "Serento",
+        price: 999,
         inCart: 0,
-        cataloguePhoto: "Pictures/fabric-9.jpg"
+        cataloguePhoto: "Pictures/serento1.jpg",
+        photoOne: "Pictures/serento1.jpg",
+        photoTwo: "Pictures/serento2.jpg",
+        photoThree: "Pictures/serento3.jpg",
+        photoFour: "Pictures/serento4.jpg",
+        description: "Italian sophistication and contemporary style combine in the beautifully designed Serento leather 3 seater sofa. Its comfy foam cushions hug you in a soft yet supportive sit while its padded armrests add extra support. Each sit feels deeply relaxing as you’re cushioned by the soft and durable 100% leather upholstery. It features exquisite stitching detail and elegant dark wood feet, which perfectly complement its clean lines and contemporary silhouette. Perfectly suited to a wide range of interiors, this stylish sofa guarantees a comfy seat when you get home after a long day. Available in a wonderful choice of colours and fabric options. Please call us on 0800 804 8879 to find out more. Only available in the UK at Furniture Village, this beautifully designed and stylish 3 seater leather sofa is part of the contemporary and sophisticated Serento range."
     },
     {
         productName: "Product numero 5",
