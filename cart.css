@@ -1,0 +1,507 @@
+#remove-product:hover {
+    cursor: pointer;
+  }
+
+  #decrease-quantity:hover {
+    cursor: pointer;
+  }
+
+  #increase-quantity:hover {
+    cursor: pointer;
+  }
+
+  #remove-product::selection {
+    color: none;
+    background: none;
+}
+
+#decrease-quantity::selection {
+  color: none;
+  background: none;
+}
+
+#increase-quantity::selection {
+  color: none;
+  background: none;
+}
+
+
+
+@media (max-width: 1500px) {
+  #cart-row{
+    column-count: 1;
+  }
+  #column-one {
+    padding-right: 0 !important;
+    width: 95% !important;
+  }
+  #column-two {
+    width: 95% !important;
+    padding-top: 1.5%;
+  }
+  #card-two {
+    width: 100% !important;
+    margin: auto;
+  }
+  #paypal-button-container {
+    margin: auto;
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 775px) {
+  #header-product-name{
+    font-size: 95% !important;
+  }
+  #header-product-cost-one{
+    font-size: 95% !important;
+  }
+  #header-product-cost-two{
+    font-size: 95% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 95% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 95% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 95% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 95% !important;
+  }
+  #product-name{
+    font-size: 95% !important;
+  }
+  #product-price{
+    font-size: 95% !important;
+  }
+  #decrease-quantity{
+    font-size: 95% !important;
+  }
+  #increase-quantity{
+    font-size: 95% !important;
+  }
+  #product-quantity{
+    font-size: 95% !important;
+  }
+  #total-product-cost{
+    font-size: 95% !important;
+  }
+  #remove-product{
+    font-size: 95% !important;
+  }
+  #subtotal-text{
+    font-size: 95% !important;
+  }
+  #subtotal{
+    font-size: 95% !important;
+  }
+  #shipping-text{
+    font-size: 95% !important;
+  }
+  #shipping-cost{
+    font-size: 95% !important;
+  }
+  #total{
+    font-size: 95% !important;
+  }
+  #total-cost{
+    font-size: 95% !important;
+  }
+  #continue-shopping{
+    font-size: 95% !important;
+  }
+}
+@media (max-width: 600px) {
+  #header-product-name{
+    font-size: 90% !important;
+  }
+  #header-product-cost-one{
+    font-size: 90% !important;
+  }
+  #header-product-cost-two{
+    font-size: 90% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 90% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 90% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 90% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 90% !important;
+  }
+  #product-name{
+    font-size: 90% !important;
+  }
+  #product-price{
+    font-size: 90% !important;
+  }
+  #decrease-quantity{
+    font-size: 90% !important;
+  }
+  #increase-quantity{
+    font-size: 90% !important;
+  }
+  #product-quantity{
+    font-size: 90% !important;
+  }
+  #total-product-cost{
+    font-size: 90% !important;
+  }
+  #remove-product{
+    font-size: 90% !important;
+  }
+  #subtotal-text{
+    font-size: 90% !important;
+  }
+  #subtotal{
+    font-size: 90% !important;
+  }
+  #shipping-text{
+    font-size: 90% !important;
+  }
+  #shipping-cost{
+    font-size: 90% !important;
+  }
+  #total{
+    font-size: 90% !important;
+  }
+  #total-cost{
+    font-size: 90% !important;
+  }
+  #continue-shopping{
+    font-size: 90% !important;
+  }
+}
+@media (max-width: 550px) {
+  #header-product-name{
+    font-size: 80% !important;
+  }
+  #header-product-cost-one{
+    font-size: 80% !important;
+  }
+  #header-product-cost-two{
+    font-size: 80% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 80% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 80% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 80% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 80% !important;
+  }
+  #product-name{
+    font-size: 80% !important;
+  }
+  #product-price{
+    font-size: 80% !important;
+  }
+  #decrease-quantity{
+    font-size: 80% !important;
+  }
+  #increase-quantity{
+    font-size: 80% !important;
+  }
+  #product-quantity{
+    font-size: 80% !important;
+  }
+  #total-product-cost{
+    font-size: 80% !important;
+  }
+  #remove-product{
+    font-size: 80% !important;
+  }
+  #subtotal-text{
+    font-size: 80% !important;
+  }
+  #subtotal{
+    font-size: 80% !important;
+  }
+  #shipping-text{
+    font-size: 80% !important;
+  }
+  #shipping-cost{
+    font-size: 80% !important;
+  }
+  #total{
+    font-size: 80% !important;
+  }
+  #total-cost{
+    font-size: 80% !important;
+  }
+  #continue-shopping{
+    font-size: 80% !important;
+  }
+}
+@media (max-width: 500px) {
+  #header-product-name{
+    font-size: 70% !important;
+  }
+  #header-product-cost-one{
+    font-size: 70% !important;
+  }
+  #header-product-cost-two{
+    font-size: 70% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 70% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 70% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 70% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 70% !important;
+  }
+  #product-name{
+    font-size: 70% !important;
+  }
+  #product-price{
+    font-size: 70% !important;
+  }
+  #decrease-quantity{
+    font-size: 70% !important;
+  }
+  #increase-quantity{
+    font-size: 70% !important;
+  }
+  #product-quantity{
+    font-size: 70% !important;
+  }
+  #total-product-cost{
+    font-size: 70% !important;
+  }
+  #remove-product{
+    font-size: 70% !important;
+  }
+  #subtotal-text{
+    font-size: 70% !important;
+  }
+  #subtotal{
+    font-size: 70% !important;
+  }
+  #shipping-text{
+    font-size: 70% !important;
+  }
+  #shipping-cost{
+    font-size: 70% !important;
+  }
+  #total{
+    font-size: 70% !important;
+  }
+  #total-cost{
+    font-size: 70% !important;
+  }
+  #continue-shopping{
+    font-size: 70% !important;
+  }
+}
+@media (max-width: 435px) {
+  #header-product-name{
+    font-size: 60% !important;
+  }
+  #header-product-cost-one{
+    font-size: 60% !important;
+  }
+  #header-product-cost-two{
+    font-size: 60% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 60% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 60% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 60% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 60% !important;
+  }
+  #product-name{
+    font-size: 60% !important;
+  }
+  #product-price{
+    font-size: 60% !important;
+  }
+  #decrease-quantity{
+    font-size: 60% !important;
+  }
+  #increase-quantity{
+    font-size: 60% !important;
+  }
+  #product-quantity{
+    font-size: 60% !important;
+  }
+  #total-product-cost{
+    font-size: 60% !important;
+  }
+  #remove-product{
+    font-size: 60% !important;
+  }
+  #subtotal-text{
+    font-size: 60% !important;
+  }
+  #subtotal{
+    font-size: 60% !important;
+  }
+  #shipping-text{
+    font-size: 60% !important;
+  }
+  #shipping-cost{
+    font-size: 60% !important;
+  }
+  #total{
+    font-size: 60% !important;
+  }
+  #total-cost{
+    font-size: 60% !important;
+  }
+  #continue-shopping{
+    font-size: 60% !important;
+  }
+}
+@media (max-width: 370px) {
+  #header-product-name{
+    font-size: 50% !important;
+  }
+  #header-product-cost-one{
+    font-size: 50% !important;
+  }
+  #header-product-cost-two{
+    font-size: 50% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 50% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 50% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 50% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 50% !important;
+  }
+  #product-name{
+    font-size: 50% !important;
+  }
+  #product-price{
+    font-size: 50% !important;
+  }
+  #decrease-quantity{
+    font-size: 50% !important;
+  }
+  #increase-quantity{
+    font-size: 50% !important;
+  }
+  #product-quantity{
+    font-size: 50% !important;
+  }
+  #total-product-cost{
+    font-size: 50% !important;
+  }
+  #remove-product{
+    font-size: 50% !important;
+  }
+  #subtotal-text{
+    font-size: 50% !important;
+  }
+  #subtotal{
+    font-size: 50% !important;
+  }
+  #shipping-text{
+    font-size: 50% !important;
+  }
+  #shipping-cost{
+    font-size: 50% !important;
+  }
+  #total{
+    font-size: 50% !important;
+  }
+  #total-cost{
+    font-size: 50% !important;
+  }
+  #continue-shopping{
+    font-size: 50% !important;
+  }
+}
+@media (max-width: 300px) {
+  #header-product-name{
+    font-size: 40% !important;
+  }
+  #header-product-cost-one{
+    font-size: 40% !important;
+  }
+  #header-product-cost-two{
+    font-size: 40% !important;
+  }
+  #header-product-quantity-one{
+    font-size: 40% !important;
+  }
+  #header-product-quantity-two{
+    font-size: 40% !important;
+  }
+  #header-product-total-cost-one{
+    font-size: 40% !important;
+  }
+  #header-product-total-cost-two{
+    font-size: 40% !important;
+  }
+  #product-name{
+    font-size: 40% !important;
+  }
+  #product-price{
+    font-size: 40% !important;
+  }
+  #decrease-quantity{
+    font-size: 40% !important;
+  }
+  #increase-quantity{
+    font-size: 40% !important;
+  }
+  #product-quantity{
+    font-size: 40% !important;
+  }
+  #total-product-cost{
+    font-size: 40% !important;
+  }
+  #remove-product{
+    font-size: 40% !important;
+  }
+  #subtotal-text{
+    font-size: 40% !important;
+  }
+  #subtotal{
+    font-size: 40% !important;
+  }
+  #shipping-text{
+    font-size: 40% !important;
+  }
+  #shipping-cost{
+    font-size: 40% !important;
+  }
+  #total{
+    font-size: 40% !important;
+  }
+  #total-cost{
+    font-size: 40% !important;
+  }
+  #continue-shopping{
+    font-size: 40% !important;
+  }
+}

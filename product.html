@@ -12,6 +12,7 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="universal.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -22,7 +23,7 @@
 	<section id="home-page" style="background-color: #bfd6d9">
 		<!-- Header -->
 		<header>
-			<div class="container" style="min-width: 100%">
+			<div id="header-container" class="container" style="min-width: 100%">
 				<div class="header-top d-flex justify-content-between pt-2">
 					<div id="socials" class="d-flex justify-content-between w-15">
 						<div class="item px-2">
@@ -34,8 +35,11 @@
 						<div class="item px-2">
 							<a href="https://www.Instagram.com"><img src="Assets/Social_Media_Icons/instagram.png" alt="Instagram" height="25px"></a>
 						</div>
+						<div id="shopping-cart-one" class="item px-2">
+							<a href="cart.html"><img src="Assets/General_Icons/carts.png" alt="Checkout" height="25px"></a>
+						</div>
 					</div> 
-					<div id="info-big">
+					<div id="info-big" class="column">
 						<div class="row" style="height: 35px;">
 							<div class="d-flex justify-content-between">
 								<div class="item px-2">
@@ -52,14 +56,17 @@
 							</div>
 						</div>
 					</div>
-					<div id="info-small">
+					<div id="info-small" class="column">
 						<div class="row" style="height: 35px;">
 							<div class="d-flex justify-content-between">
+								<div id="shopping-cart-two" class="item px-2">
+									<a href="cart.html"><img src="Assets/General_Icons/carts.png" alt="Checkout" height="25px"></a>
+								</div>
 								<div class="item px-2">
 									<a href="tel:+447522264097"><img src="Assets/General_Icons/telephone.png" alt="Telephone" height="25px"></a>
 								</div>
 								<div class="item px-2">
-									<img class="linear-wipe" onclick="doScrolling('#map-container', 1000)" src="Assets/General_Icons/placeholder.png" alt="Location" height="25px">
+									<a href="index.html#map-container"><p class="linear-wipe"><img src="Assets/General_Icons/placeholder.png" alt="Location" height="25px"></p></a>
 								</div>
 								<div class="item px-2">
 									<p data-toggle="modal" data-target="#form" class="linear-wipe"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</p>
@@ -208,6 +215,20 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="socials-container-bottom" style="width: 100%;">
+		<div id="socials-bottom" class="row" style="margin: auto; justify-content: center; padding-top: 0.5%; padding-bottom: 1%;">
+			<div>
+				<a href="https://www.Facebook.com"><img src="Assets/Social_Media_Icons/facebook.png" alt="Scot Living Facebook" height="25px"></a>
+			</div>
+			<div style="padding-left: 3%; padding-right: 3%;">
+				<a href="https://twitter.com/scot_living"><img src="Assets/Social_Media_Icons/twitter.png" alt="Scot Living Twitter" height="25px"></a>
+			</div>
+			<div>
+				<a href="https://www.instagram.com/scotliving/"><img src="Assets/Social_Media_Icons/instagram.png" alt="Scot Living Instagram" height="25px"></a>
+			</div>
+		</div> 
 	</div>
 	
 
