@@ -3,7 +3,7 @@
 	src: url(Fonts/Quicksand-VariableFont_wght.ttf);
   }
 
-@media (max-width: 460px) {
+@media (max-width: 500px) {
   #socials {
     display: none !important;
   }
@@ -11,10 +11,14 @@
     display: none !important;
   }
 }
-@media (min-width: 461px) {
+@media (min-width: 501px) {
   #info-small {
     display: none !important;
   }
+}
+
+#shopping-cart-one {
+  display: none;
 }
 
 #info-small {
@@ -69,10 +73,21 @@
     font-size: 12px !important;
   }
 }
+@media (max-width: 330px){
+  .navbar-search {
+    width: 220px !important;
+  }
+  .search-input::placeholder {
+    font-size: 12px !important;
+  }
+}
 
 @media (max-width: 991px){
   .search-container {
     display: none !important;
+  }
+  #shopping-cart-one {
+    display: inline;
   }
 }
 
