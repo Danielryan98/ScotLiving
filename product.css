@@ -1,92 +1,3 @@
-@font-face {
-	font-family: myFirstFont;
-	src: url(Fonts/Quicksand-VariableFont_wght.ttf);
-  }
-
-@media (max-width: 460px) {
-  #socials {
-    display: none !important;
-  }
-  #info-big {
-    display: none !important;
-  }
-}
-@media (min-width: 461px) {
-  #info-small {
-    display: none !important;
-  }
-}
-
-#info-small {
-  margin: auto;
-}
-
-.second-header-top img{
-  height: 160px;
-  padding-bottom: 10px;
-}
-
-@media (max-width: 600px) {
-  .second-header-top img{
-    height: 130px;
-  }
-}
-@media (max-width: 400px) {
-  .second-header-top img{
-    height: 120px;
-  }
-}
-
-.second-header-top {
-  font-size: 0;
-  text-align: center;
-  margin: auto;
-}
-
-
-
-@media (min-width: 992px){
-  .navbar-search {
-    display: none !important;
-  }
-}
-
-@media (max-width: 604px){
-  .navbar-search {
-    width: 400px !important;
-  }
-}
-
-@media (max-width: 504px){
-  .navbar-search {
-    width: 300px !important;
-  }
-}
-
-@media (max-width: 400px){
-  .navbar-search {
-    width: 240px !important;
-  }
-  .search-input::placeholder {
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width: 991px){
-  .search-container {
-    display: none !important;
-  }
-}
-
-.second-header-top .search-bar .form-control{
-  margin-left: auto;
-  width: 300px;
-}
-
-.second-header-top .search-bar .btn{
-  margin-right: auto;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
 /* Base styling */
@@ -125,10 +36,17 @@
 }
 
 @media (max-width: 1400px) {
-  .column {
+  #column-one {
+    width: 100%;
+  }
+  #column-two {
     width: 100%;
   }
   #big-img-container {
+    width: 97.5% !important;
+    margin: auto;
+  }
+  #productName.card-title {
     width: 97.5% !important;
     margin: auto;
   }
