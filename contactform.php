@@ -11,5 +11,5 @@ if(isset($_POST['submit'])){
     $txt = "New call back request.\n".$name."\n".$phoneMumber;
 
     mail($mailTo, $subject, $txt, $headers);
-    header("Location: index.html?mailsent");
+    header("Location: index.php?mailsent");
 }
