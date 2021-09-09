@@ -1,6 +1,7 @@
 function displayCart() {
     let cartItems = localStorage.getItem('productsInCart');
     cartItems = JSON.parse(cartItems);
+    let cartNumbers = localStorage.getItem('cartNumbers');
     let productContainer = document.querySelector("#cart-container");
     let subtotalContainer = document.querySelector("#subtotal");
     let totalContainerOne = document.querySelector("#total-cost");
@@ -51,6 +52,11 @@ function displayCart() {
         `;
         totalContainerTwo.innerHTML += `
         £${cartCost}
+        `;
+    }
+    if (cartNumbers == 0){
+        productContainer.innerHTML += `
+        <p>Cart empty</p>
         `;
     }
 }
