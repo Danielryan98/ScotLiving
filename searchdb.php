@@ -219,14 +219,14 @@
             // Process the result(s)
             while ($row = $result->fetch_assoc()) {
                 echo "<div id='product-card' class='card' style='width: 463px; margin: auto;'>";
-                // echo "<div class='product-img-container' style='height: 315px;'>";
-                // echo "<a href='javascript:move();'>";
-                // echo "<img class='product-photo' style='width: 100%; height: 100%;' src='${sofa.cataloguePhoto}'>";
-                // echo "</a>";
-                // echo "</div>";
+                echo "<div class='product-img-container' style='height: 315px;'>";
+                echo "<a href='javascript:move();'>";
+                echo "<img class='product-photo' style='width: 100%; height: 100%;' src=".$row['Main_Image_File_Name'].">";
+                echo "</a>";
+                echo "</div>";
                 echo "<div class='card-body'>";
                 echo "<p id='prodName' class='card-title'>".$row['Name']."</p>";
-                echo "<p class='product-price'>£99</p>";
+                echo "<p class='product-price'>£".$row['Price']."</p>";
                 echo "<p class='product-description'>".$row['Description']."</p>";
                 echo "</div>";
                 echo "</div>";
@@ -258,7 +258,7 @@
 	</div>
 
 	<!-- Optional JavaScript -->
-  <!-- <script type="text/javascript" src='products.js'> </script> --> 
+  <script type="text/javascript" src='search.js'> </script> 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
