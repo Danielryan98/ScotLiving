@@ -56,6 +56,8 @@ var t = d.getHours();
 
 init();
 
+
+
 function getElementY(query) {
     return window.pageYOffset + document.querySelector(query).getBoundingClientRect().top
   }

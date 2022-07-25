@@ -113,7 +113,10 @@
 		<div class="logo">
 		<a href="index.php"><img src="Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original_on_Transparent_15.png" class="img-fluid" alt="Scot Living"></a></div>
 		<div class="search-container">
-			<input class="search-input" type="text" placeholder="Search for products & inspiration">
+			<form action="searchdb.php" method="post">
+				<input name="search" class="search-input" type="text" placeholder="Search for products & inspiration">
+				<button type="submit" name="submit">Search</button>
+			</form>
 		</div>
 	</div>
 
