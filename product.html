@@ -17,107 +17,161 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Scoped styles ONLY for the new right-side details panel.
+       All class names are prefixed with "sl-" to avoid collisions. -->
+  <style>
+    :root {
+      --sl-ink: #2d2f36;
+      --sl-muted: #6b6f76;
+      --sl-panel: #ffffff;
+      --sl-divider: #e9ecef;
+      --sl-accent: #226C3B;
+      --sl-accent-ink: #ffffff;
+      --sl-price: #d31313;
+      --sl-radius: 16px;
+      --sl-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    /* Right panel container */
+    .sl-details-card {
+      background: var(--sl-panel);
+	  border-top-left-radius: var(--sl-radius);
+      border-top-right-radius: var(--sl-radius);
+      box-shadow: var(--sl-shadow);
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* Title / subtitle / price */
+    .sl-title {
+      margin: 0 0 2px 0;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 1.25;
+      color: var(--sl-ink);
+    }
+
+    .sl-subtitle {
+      margin: 0 0 16px 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--sl-muted);
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .sl-price {
+      margin: 4px 0 8px 0;
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--sl-price);
+    }
+
+    .sl-lead {
+      color: var(--sl-muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .sl-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--sl-divider);
+      margin: 18px 0;
+    }
+
+    /* Description & sections */
+    .sl-section-title {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--sl-ink);
+    }
+
+    .sl-paragraph {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: var(--sl-ink);
+    }
+
+    /* Swatches */
+    .sl-swatches {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0 14px 0;
+    }
+    .sl-swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      outline: 1px solid rgba(0,0,0,0.08);
+      background: #ddd;
+      cursor: pointer;
+      transition: transform .1s ease, border-color .1s ease, outline-color .1s ease;
+    }
+    .sl-swatch:hover { transform: translateY(-1px); }
+    .sl-swatch[aria-checked="true"] {
+      border-color: var(--sl-accent);
+      outline-color: var(--sl-accent);
+    }
+    .sl-note {
+      font-size: 12px;
+      color: var(--sl-muted);
+      margin: 4px 0 0 0;
+    }
+
+    /* Buttons */
+    .sl-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 10px;
+      margin-top: 10px;
+    }
+
+    .sl-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--sl-divider);
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .1s ease, filter .1s ease, box-shadow .1s ease;
+      text-align: center;
+    }
+    .sl-btn:active { transform: translateY(1px); }
+
+    .sl-btn-primary {
+      background: var(--sl-accent);
+      color: var(--sl-accent-ink);
+      border: none;
+      box-shadow: 0 6px 18px rgba(34,108,59,0.25);
+    }
+
+    .sl-btn-ghost {
+      background: transparent;
+      color: var(--sl-ink);
+    }
+
+    /* Make sure the right card looks good on narrow screens too */
+    @media (max-width: 576px) {
+      #card-two { width: 100% !important; }
+    }
+  </style>
 </head>
 
 <body style="background-color: #bfd6d9">
 	<section id="home-page" style="background-color: #bfd6d9">
-		<!-- Header -->
-		<header>
-			<div id="header-container" class="container" style="min-width: 100%">
-				<div class="header-top d-flex justify-content-between pt-2">
-					<div id="socials" class="d-flex justify-content-between w-15">
-						<div class="item px-2">
-							<a href="https://www.Facebook.com"><img src="Assets/Social_Media_Icons/facebook.png" alt="Facebook" height="25px"></a>
-						</div>
-						<div class="item px-2">
-							<a href="https://www.Twitter.com"><img src="Assets/Social_Media_Icons/twitter.png" alt="Twitter" height="25px"></a>
-						</div>
-						<div class="item px-2">
-							<a href="https://www.Instagram.com"><img src="Assets/Social_Media_Icons/instagram.png" alt="Instagram" height="25px"></a>
-						</div>
-						<div id="shopping-cart-one" class="item px-2">
-							<a href="cart.html"><img src="Assets/General_Icons/carts.png" alt="Checkout" height="25px"></a>
-						</div>
-					</div> 
-					<div id="info-big" class="column">
-						<div class="row" style="height: 35px;">
-							<div class="d-flex justify-content-between">
-								<div class="item px-2">
-									<p style="color: #353745; font-family: myFirstFont;"><img src="Assets/General_Icons/telephone.png" alt="Telephone" height="25px">+0131625432</p>
-								</div>
-								<div class="item px-2">
-									<p data-toggle="modal" data-target="#form" class="linear-wipe"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</p>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="item px-2" style="margin: auto; height: 25px;">
-								<a href="index.php#map-container"><p class="linear-wipe"><img src="Assets/General_Icons/placeholder.png" alt="Location" height="25px">Newton Stewart</p></a>
-							</div>
-						</div>
-					</div>
-					<div id="info-small" class="column">
-						<div class="row" style="height: 35px;">
-							<div class="d-flex justify-content-between">
-								<div id="shopping-cart-two" class="item px-2">
-									<a href="cart.html"><img src="Assets/General_Icons/carts.png" alt="Checkout" height="25px"></a>
-								</div>
-								<div class="item px-2">
-									<a href="tel:+447522264097"><img src="Assets/General_Icons/telephone.png" alt="Telephone" height="25px"></a>
-								</div>
-								<div class="item px-2">
-									<a href="index.php#map-container"><p class="linear-wipe"><img src="Assets/General_Icons/placeholder.png" alt="Location" height="25px"></p></a>
-								</div>
-								<div class="item px-2">
-									<p data-toggle="modal" data-target="#form" class="linear-wipe"><img src="Assets/General_Icons/customer-service-agent.png" alt="Location" height="25px" style="padding-right: 2px;">Request a call back</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-	
-		<div class="modal fade" id="form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered" role="document">
-			  <div class="modal-content">
-				<div class="modal-header border-bottom-0">
-				  <h5 class="modal-title" id="exampleModalLabel">We'll call you as soon as we can...</h5>
-				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-				<form>
-				  <div class="modal-body">
-					<div class="form-group">
-					  <label class="form-label">First Name</label>
-					  <input class="details-input" type="text" placeholder="Enter name">
-					</div>
-					<div class="form-group">
-					  <label class="form-label">Surname</label>
-					  <input class="details-input" type="text" placeholder="Enter surname">
-					</div>
-					<div class="form-group">
-					  <label class="form-label">Telephone</label>
-					  <input class="details-input" type="text" placeholder="Enter your telephone number">
-					</div>
-				  </div>
-				  <div class="modal-footer border-top-0 d-flex justify-content-center">
-					<label type="submit" data-dismiss="modal" class="btn btn-primary btn-success">Call me back</label>
-				  </div>
-				</form>
-			  </div>
-			</div>
-		  </div>
-	
-	</div>
-	
+
 		<div class="second-header-top">
 			<div class="logo">
-			<a href="index.php"><img src="Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original_on_Transparent_15.png" class="img-fluid" alt="Scot Living"></a></div>
-			<div class="search-container">
-				<input class="search-input" type="text" placeholder="Search for products & inspiration">
-			</div>
+			<a href="index.html"><img src="Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original_on_Transparent_15.png" class="img-fluid" alt="Scot Living"></a></div>
 		</div>
 	
 		
@@ -160,9 +214,9 @@
 				  <li class="nav-item">
 					<a class="nav-link" href="#">Mattresses</a>
 				  </li>
-				  <li class="nav-item">
+				  <!-- <li class="nav-item">
 					<a id="checkout-link" class="nav-link" href="cart.html">Checkout</a>
-				  </li>
+				  </li> -->
 			  </ul>
 			</div>
 		</nav>
@@ -170,7 +224,6 @@
 	<div class="row" style="width: 100%; background-color: #bfd6d9; justify-content: center; margin: 0 !important;">
 		<div id="column-one" class="column">
 			<div id="card-one" class="card" style="width: 700px; background-color: #bfd6d9;">
-				<h5 id="productName" class="card-title">SOFA NAME</h5>
 				<div id="big-img-container">
 				<img id="bigImg" src="" class="card-img-top" alt="Sofa">
 				</div>
@@ -192,47 +245,74 @@
 				</div>
 			</div>
 		</div>
+
+    <!-- ======= ONLY COLUMN TWO BELOW IS CHANGED TO A STYLISH DETAILS/ACTIONS PANEL ======= -->
 		<div id="column-two" class="column">
-			<div id="card-two" class="card" style="width: 372px; background-color: #bfd6d9;">
-				<div class="card-body-two" style="padding-top: 1.25%;">
-					<div class="card" style="border: none; background-color: #353745;">
-						<div class="row" style="width: 100%; margin: auto; ">
-							<div class="column" style="color: rgb(255, 0, 0); font-weight: 900; width: 100%;">
-								<h5 id="price" class="product-price"></h5>
-							</div>
-						</div>
-						<p id="name-of-product" style="color: white; padding-left: 5%; padding-right: 5%; font-weight: 500;">Product Name</p>
-						<p id="product-description" style="color: white; padding-left: 5%; padding-right: 5%; max-width: fit-content; text-align: justify;">Shown here as a left hand facing chaise also available as right hand facing. Available in Lime Wash and Walnut feet at no extra cost. 
-							Comes with soft fibre-filled cushions as standard for a comfy and relaxed feel - Or choose fibre encore seat filling: a foam core in a soft continental quilt wrap that will keep its shape beautifully through the years (at extra cost)
-							Features removable arms for ease of delivery
-							Each Sofa, Cuddler and Chair comes with the Joules yellow hare back foot
-							Joules branded labels</p>
-					</div>
-				</div>
-				<div id="basket-phone-container" class="basket-phone-container">
-					<button id="buy-btn" class="btn-buy" onclick="setColour()";><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em> Add to Basket</button>
-					<button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 2%; padding-left: 1%;"></em> Order by Phone</button>
-					<img id="adOne" src="Pictures/sale.png" alt="">
-					<img id="adTwo" src="Pictures/chair.png" alt="">
-				</div>
+			<div id="card-two" class="card" style="width: 372px; background-color: #bfd6d9; border: none;">
+        <div class="sl-details-card">
+          <h1 class="sl-title">The Hackney</h1>
+          <p class="sl-subtitle">Fabric sofa • 2 seater</p>
+
+          <p class="sl-price" id="slPriceLabel">£1,299</p>
+          <p class="sl-lead">
+            A modern classic with cloud-soft cushions and a supportive sit. Carefully upholstered in a durable, family-friendly fabric that looks refined yet relaxed.
+          </p>
+
+		  <div>
+			<h3 class="sl-section-title">Available colours</h3>
+			<div class="sl-swatches sl-swatches--static" aria-label="Colour options">
+			  <!-- Each swatch is now a static chip (no role, no aria-checked, no click) -->
+			  <span class="sl-swatch sl-swatch--static" title="Mist Grey" aria-label="Mist Grey" style="background:#cfd3d6;"></span>
+			  <span class="sl-swatch sl-swatch--static" title="Olive" aria-label="Olive" style="background:#9fa78e;"></span>
+			  <span class="sl-swatch sl-swatch--static" title="Stone" aria-label="Stone" style="background:#d7cfc6;"></span>
+			  <span class="sl-swatch sl-swatch--static" title="Charcoal" aria-label="Charcoal" style="background:#5a5f67;"></span>
+			</div>
+		  </div>
+		  
+          <!-- <div>
+            <h3 class="sl-section-title">Available colours</h3>
+            <p class="sl-note" id="slSwatchActiveLabel">Selected: Mist Grey</p>
+            <div class="sl-swatches" role="radiogroup" aria-labelledby="slSwatchActiveLabel">
+              <button type="button" class="sl-swatch" role="radio" aria-checked="true" aria-label="Mist Grey" data-color="Mist Grey" style="background:#cfd3d6;"></button>
+              <button type="button" class="sl-swatch" role="radio" aria-checked="false" aria-label="Olive" data-color="Olive" style="background:#9fa78e;"></button>
+              <button type="button" class="sl-swatch" role="radio" aria-checked="false" aria-label="Stone" data-color="Stone" style="background:#d7cfc6;"></button>
+              <button type="button" class="sl-swatch" role="radio" aria-checked="false" aria-label="Charcoal" data-color="Charcoal" style="background:#5a5f67;"></button>
+            </div>
+          </div> -->
+
+          <div class="sl-divider" role="separator" aria-hidden="true"></div>
+
+          <div>
+            <h3 class="sl-section-title">Description</h3>
+            <p class="sl-paragraph">
+              Handcrafted by skilled upholsterers, The Hackney pairs deep cushions with subtly flared arms for a timeless profile. Seat cushions are generous and supportive, while the back cushions softly cradle you for long movies or lazy Sundays.
+            </p>
+            <p class="sl-paragraph">
+              Built on a robust hardwood frame and finished with solid wood feet, it’s designed to last. Fabrics are easy to care for with a gently textured weave that hides everyday marks. Choose from our curated palette to suit your space.
+            </p>
+          </div>
+
+          <div class="sl-divider" role="separator" aria-hidden="true"></div>
+
+          <p class="sl-lead"><i class="fa fa-clock-o" aria-hidden="true"></i> Delivered from <strong>7 weeks</strong>.</p>
+
+          <div class="sl-actions">
+			<button id="slAddToCartBtn" type="button" class="sl-btn sl-btn-primary">
+				<i class="fa fa-phone" aria-hidden="true"></i> Enquire Now
+			  </button>
+            <!-- <button id="slAddToCartBtn" type="button" class="sl-btn sl-btn-primary">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
+            </button> -->
+            <!-- <button id="slSaveBtn" type="button" class="sl-btn sl-btn-ghost">
+              <i class="fa fa-heart-o" aria-hidden="true"></i> Save for later
+            </button>
+            <p class="sl-note">Safe checkout • 0% APR options up to 3 years • Free 14-day returns</p> -->
+          </div>
+        </div>
 			</div>
 		</div>
+    <!-- ======= END OF CHANGED COLUMN TWO ======= -->
 	</div>
-
-	<div class="socials-container-bottom" style="width: 100%;">
-		<div id="socials-bottom" class="row" style="margin: auto; justify-content: center; padding-top: 0.5%; padding-bottom: 1%;">
-			<div>
-				<a href="https://www.Facebook.com"><img src="Assets/Social_Media_Icons/facebook.png" alt="Scot Living Facebook" height="25px"></a>
-			</div>
-			<div style="padding-left: 3%; padding-right: 3%;">
-				<a href="https://twitter.com/scot_living"><img src="Assets/Social_Media_Icons/twitter.png" alt="Scot Living Twitter" height="25px"></a>
-			</div>
-			<div>
-				<a href="https://www.instagram.com/scotliving/"><img src="Assets/Social_Media_Icons/instagram.png" alt="Scot Living Instagram" height="25px"></a>
-			</div>
-		</div> 
-	</div>
-	
 
 		<!-- The Modal -->
 		<div id="myModal" class="product-modal">
@@ -258,6 +338,70 @@
 	   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		 crossorigin="anonymous"></script>
+
+     <!-- Minimal JS for the new right-side panel (swatches + add to cart feedback).
+          This does NOT modify your existing cart logic; you can wire slAddToCartBtn
+          into your cart as needed. -->
+     <script>
+       (function() {
+         "use strict";
+
+         // Explicit variable declarations for all elements we touch.
+         var slSwatchButtons = document.querySelectorAll(".sl-swatch");
+         var slSwatchActiveLabel = document.getElementById("slSwatchActiveLabel");
+         var slAddToCartBtn = document.getElementById("slAddToCartBtn");
+         var slSaveBtn = document.getElementById("slSaveBtn");
+         var slPriceLabel = document.getElementById("slPriceLabel");
+
+         // Defensive checks (elements exist before binding).
+         if (slSwatchButtons && slSwatchButtons.length > 0 && slSwatchActiveLabel) {
+           for (var i = 0; i < slSwatchButtons.length; i++) {
+             (function(btn) {
+               btn.addEventListener("click", function() {
+                 // Uncheck all
+                 for (var j = 0; j < slSwatchButtons.length; j++) {
+                   slSwatchButtons[j].setAttribute("aria-checked", "false");
+                 }
+                 // Check current
+                 btn.setAttribute("aria-checked", "true");
+                 var selected = btn.getAttribute("data-color") || "Selected";
+                 slSwatchActiveLabel.textContent = "Selected: " + selected;
+               });
+             })(slSwatchButtons[i]);
+           }
+         }
+
+         // Add to cart feedback (replace with your own add-to-cart logic)
+         if (slAddToCartBtn) {
+           slAddToCartBtn.addEventListener("click", function() {
+             var chosen = "Unknown";
+             // Find which swatch is active
+             for (var i = 0; i < slSwatchButtons.length; i++) {
+               if (slSwatchButtons[i].getAttribute("aria-checked") === "true") {
+                 chosen = slSwatchButtons[i].getAttribute("data-color") || "Unknown";
+               }
+             }
+             // In real integration, call your cart function here.
+             // This alert is just a placeholder confirmation.
+             var priceText = slPriceLabel ? slPriceLabel.textContent : "£—";
+             alert("Added to cart: The Hackney (2 Seater) — " + chosen + " • " + priceText);
+           });
+         }
+
+         // Save for later feedback
+         if (slSaveBtn) {
+           slSaveBtn.addEventListener("click", function() {
+             var original = slSaveBtn.innerHTML;
+             slSaveBtn.disabled = true;
+             slSaveBtn.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i> Saved';
+             window.setTimeout(function() {
+               slSaveBtn.disabled = false;
+               slSaveBtn.innerHTML = original;
+             }, 1500);
+           });
+         }
+       })();
+     </script>
 	</section>
 </body>
 </html>

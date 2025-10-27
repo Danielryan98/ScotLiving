@@ -2,24 +2,27 @@
 
 /* Base styling */
 
+.column {
+  padding-top: 1%;
+}
 
 .card-body-one {
-  padding-top: 1.25% !important;
-  padding-bottom: 1.25% !important;
-  padding-left: 1.25% !important;
-  padding-right: 1.25% !important;
+  padding-top: 1% !important;
+  padding-bottom: 1% !important;
+  /* padding-left: 1% !important; */
+  /* padding-right: 1% !important; */
 }
 
 .card-body-two {
-  padding-bottom: 1.25% !important;
-  padding-left: 1.25% !important;
-  padding-right: 1.25% !important;
+  padding-bottom: 1% !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
 }
 
 .basket-phone-container {
-  padding-bottom: 1.25% !important;
-  padding-left: 1.25% !important;
-  padding-right: 1.25% !important;
+  padding-bottom: 1% !important;
+  padding-left: 1% !important;
+  padding-right: 1% !important;
 }
 
 #card-two {
@@ -52,6 +55,8 @@
   }
   .card-body-one {
     padding-bottom: 0 !important;
+    padding-left: 1.25% !important;
+    padding-right: 1.25% !important;
   }
   #card-one {
     margin: auto;
@@ -240,7 +245,7 @@
   text-align: start;
   cursor: pointer; /* Mouse pointer on hover */
   min-width: 100%;
-  margin-bottom: 1.25%;
+  margin-bottom: 1%;
   border-radius: 3px;
 }
 
