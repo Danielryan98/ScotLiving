@@ -293,13 +293,13 @@
             contents: {
               img: false,
               imgWithCarousel: false,
-              title: true,          // set to false if you don't want titles
-              price: true,          // set to false if you don't want prices
+              title: false,          // set to false if you don't want titles
+              price: false,          // set to false if you don't want prices
               options: false,
               quantityInput: false,
               description: false
             },
-            buttonDestination: 'checkout',
+            buttonDestination: 'cart',
             text: { button: 'Add to cart' },
             styles: {
               product: {
@@ -329,8 +329,8 @@
             contents: {
               img: false,
               imgWithCarousel: false,
-              title: true,
-              price: true,
+              title: false,
+              price: false,
               options: false
             },
             styles: {
@@ -355,7 +355,9 @@
             text: {
               total: 'Subtotal',
               button: 'Checkout'
-            }
+            },
+            contents: { title: false },
+            popup: false
           },
 
           toggle: {}
@@ -473,6 +475,8 @@
          }
        })();
      </script>
+
+     
 	</section>
 </body>
 </html>

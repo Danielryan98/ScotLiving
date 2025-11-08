@@ -1,61 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Scot Living</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>Scot Living</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="catalogue.css" />
+    <link rel="stylesheet" href="universal.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="catalogue.css">
-  <link rel="stylesheet" href="universal.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
 
+  <body style="background-color: #ffff">
+    <section id="home-page" style="background-color: #ffff">
+      <script src="/nav.inline.js"></script>
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+      <div
+        id="app"
+        style="padding-top: 4.6px; margin: auto"
+        class="card-columns custom-columns"
+      ></div>
 
-<body style="background-color: #ffff">
-	<section id="home-page" style="background-color: #ffff">
-			
-		<script src="/nav.inline.js"></script>
-	
-	<div id="app" style="padding-top: 4.6px; margin: auto;" class="card-columns custom-columns"></div>
-	
-	<div class="socials-container-bottom" style="width: 100%;">
-		<div id="socials-bottom" class="row" style="margin: auto; justify-content: center; padding-top: 0.5%; padding-bottom: 1%;">
-			<div>
-				<a href="https://www.Facebook.com"><img src="Assets/Social_Media_Icons/facebook.png" alt="Scot Living Facebook" height="25px"></a>
-			</div>
-			<div style="padding-left: 3%; padding-right: 3%;">
-				<a href="https://twitter.com/scot_living"><img src="Assets/Social_Media_Icons/twitter.png" alt="Scot Living Twitter" height="25px"></a>
-			</div>
-			<div>
-				<a href="https://www.instagram.com/scotliving/"><img src="Assets/Social_Media_Icons/instagram.png" alt="Scot Living Instagram" height="25px"></a>
-			</div>
-		</div> 
-	</div>
+      <div class="socials-container-bottom" style="width: 100%">
+        <div
+          id="socials-bottom"
+          class="row"
+          style="
+            margin: auto;
+            justify-content: center;
+            padding-top: 0.5%;
+            padding-bottom: 1%;
+          "
+        >
+          <div>
+            <a href="https://www.Facebook.com"
+              ><img
+                src="Assets/Social_Media_Icons/facebook.png"
+                alt="Scot Living Facebook"
+                height="25px"
+            /></a>
+          </div>
+          <div style="padding-left: 3%; padding-right: 3%">
+            <a href="https://twitter.com/scot_living"
+              ><img
+                src="Assets/Social_Media_Icons/twitter.png"
+                alt="Scot Living Twitter"
+                height="25px"
+            /></a>
+          </div>
+          <div>
+            <a href="https://www.instagram.com/scotliving/"
+              ><img
+                src="Assets/Social_Media_Icons/instagram.png"
+                alt="Scot Living Instagram"
+                height="25px"
+            /></a>
+          </div>
+        </div>
+      </div>
 
-	<!-- Optional JavaScript -->
-  <script type="text/javascript" src='products.js'> </script>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+      <script src="https://sdks.shopifycdn.com/buy-button/latest/buybutton.js"></script>
 
-<script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
-<script src="/shopify-cart.js"></script>
+      <div id="my-cart"></div>
 
-	</section>
-</body>
+      <script>
+        (function () {
+          var client = ShopifyBuy.buildClient({
+            domain: "ew1p0e-te.myshopify.com",
+            storefrontAccessToken: "5a8d7121ceec1c23a9770b01f2d0f745",
+          });
+
+          var ui = ShopifyBuy.UI.init(client);
+
+          ui.createComponent("cart", {
+            node: document.getElementById("my-cart"), // optional
+            options: {
+              cart: {
+                startOpen: false,
+                popup: false,
+              },
+              toggle: {
+                contents: { title: false },
+              },
+            },
+          });
+        })();
+      </script>
+
+      <!-- Optional JavaScript -->
+      <script type="text/javascript" src="products.js"></script>
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"
+      ></script>
+
+      <script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+      <script src="/shopify-cart.js"></script>
+    </section>
+  </body>
 </html>
