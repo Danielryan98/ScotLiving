@@ -9,6 +9,7 @@
 
   <!-- FontAwesome-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="product.css">
@@ -22,13 +23,13 @@
        All class names are prefixed with "sl-" to avoid collisions. -->
   <style>
     :root {
-      --sl-ink: #2d2f36;
-      --sl-muted: #6b6f76;
-      --sl-panel: #ffffff;
+      --sl-ink: #fffffff1;
+      --sl-muted: #ffffffd0;
+      --sl-panel: #304ca0;
       --sl-divider: #e9ecef;
       --sl-accent: #226C3B;
       --sl-accent-ink: #ffffff;
-      --sl-price: #d31313;
+      --sl-price: #2d8d4d;
       --sl-radius: 16px;
       --sl-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
@@ -166,64 +167,15 @@
   </style>
 </head>
 
-<body style="background-color: #bfd6d9">
-	<section id="home-page" style="background-color: #bfd6d9">
-
-		<div class="second-header-top">
-			<div class="logo">
-			<a href="index.html"><img src="Assets\Scot_Living_Logos\Logo\Standard Logo Files\Original_on_Transparent_15.png" class="img-fluid" alt="Scot Living"></a></div>
-		</div>
-	
+<body style="background-color: #ffff">
+	<section id="home-page" style="background-color: #ffff">
 		
-		<nav class="navbar navbar-expand-lg navbar-light navbar-custom py-0" style="background-color: #353745">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="navbar-search">
-				<input class="search-input" style="margin-top: 3px;" type="text" placeholder="Search for products">
-			</div>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			  <ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-				  <a class="nav-link" href="#">Offers</a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="fabricsofas.html">Fabric Sofas</a>
-				</li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Leather Sofas</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Corner Sofas</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Recliners</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Sofa Beds</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Dining</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Bedroom</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Beds</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#">Mattresses</a>
-				  </li>
-				  <!-- <li class="nav-item">
-					<a id="checkout-link" class="nav-link" href="cart.html">Checkout</a>
-				  </li> -->
-			  </ul>
-			</div>
-		</nav>
+		<script src="/nav.inline.js"></script>
+
 	
-	<div class="row" style="width: 100%; background-color: #bfd6d9; justify-content: center; margin: 0 !important;">
+	<div class="row" style="width: 100%; background-color: #ffff; justify-content: center; margin: 0 !important;">
 		<div id="column-one" class="column">
-			<div id="card-one" class="card" style="width: 700px; background-color: #bfd6d9;">
+			<div id="card-one" class="card" style="width: 700px; background-color: #ffff;">
 				<div id="big-img-container">
 				<img id="bigImg" src="" class="card-img-top" alt="Sofa">
 				</div>
@@ -248,7 +200,7 @@
 
     <!-- ======= ONLY COLUMN TWO BELOW IS CHANGED TO A STYLISH DETAILS/ACTIONS PANEL ======= -->
 		<div id="column-two" class="column">
-			<div id="card-two" class="card" style="width: 372px; background-color: #bfd6d9; border: none;">
+			<div id="card-two" class="card" style="width: 372px; background-color: #ffff; border: none;">
         <div class="sl-details-card">
           <h1 class="sl-title">The Hackney</h1>
           <p class="sl-subtitle">Fabric sofa • 2 seater</p>
@@ -300,6 +252,121 @@
 			<button id="slAddToCartBtn" type="button" class="sl-btn sl-btn-primary">
 				<i class="fa fa-phone" aria-hidden="true"></i> Enquire Now
 			  </button>
+        <div id="collection-component-1762631673887"></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'ew1p0e-te.myshopify.com',
+      storefrontAccessToken: '5a8d7121ceec1c23a9770b01f2d0f745'
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: '661038170449',
+        node: document.getElementById('collection-component-1762631673887'),
+        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
+        options: {
+          product: {
+            layout: 'vertical',
+            // ✅ hide images (and other bits you don't want)
+            contents: {
+              img: false,
+              imgWithCarousel: false,
+              title: true,          // set to false if you don't want titles
+              price: true,          // set to false if you don't want prices
+              options: false,
+              quantityInput: false,
+              description: false
+            },
+            buttonDestination: 'checkout',
+            text: { button: 'Add to cart' },
+            styles: {
+              product: {
+                '@media (min-width: 601px)': {
+                  'max-width': 'calc(25% - 20px)',
+                  'margin-left': '20px',
+                  'margin-bottom': '50px',
+                  'width': 'calc(25% - 20px)'
+                }
+              },
+              button: { 'border-radius': '13px' }
+            }
+          },
+
+          productSet: {
+            styles: {
+              products: {
+                '@media (min-width: 601px)': {
+                  'margin-left': '-20px'
+                }
+              }
+            }
+          },
+
+          // ✅ also hide images in the modal (quick view)
+          modalProduct: {
+            contents: {
+              img: false,
+              imgWithCarousel: false,
+              title: true,
+              price: true,
+              options: false
+            },
+            styles: {
+              product: {
+                '@media (min-width: 601px)': {
+                  'max-width': '100%',
+                  'margin-left': '0px',
+                  'margin-bottom': '0px'
+                }
+              },
+              button: { 'border-radius': '13px' }
+            },
+            text: { button: 'Add to cart' }
+          },
+
+          option: {},
+
+          cart: {
+            styles: {
+              button: { 'border-radius': '13px' }
+            },
+            text: {
+              total: 'Subtotal',
+              button: 'Checkout'
+            }
+          },
+
+          toggle: {}
+        }
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
             <!-- <button id="slAddToCartBtn" type="button" class="sl-btn sl-btn-primary">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
             </button> -->
@@ -339,9 +406,13 @@
 		 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		 crossorigin="anonymous"></script>
 
-     <!-- Minimal JS for the new right-side panel (swatches + add to cart feedback).
-          This does NOT modify your existing cart logic; you can wire slAddToCartBtn
-          into your cart as needed. -->
+     <script>
+      fetch("navbar.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+    </script>
      <script>
        (function() {
          "use strict";

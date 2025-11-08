@@ -690,7 +690,7 @@
 .map-container {
   padding-bottom: 2vh;
   padding-top: 2vh;
-  background-color: #353745;
+  background-color: #304ca0;
   width: 100%;
     height: auto !important;
     margin: auto;
@@ -710,7 +710,7 @@
 .business-info {
   padding-right: 2vw;
   padding-left: 2vw;
-  background-color: #bfd6d9;
+  background-color: #ffff;
   border-radius: 30px 30px 30px 30px;
   font-family: myFirstFont;
   height: auto;
@@ -735,7 +735,7 @@
 .business-info h1 {
   text-align: center;
   font-weight: 600;
-  color: #353745;
+  color: #304ca0;
   font-size: 1.6vw;
   white-space: nowrap;
 }
@@ -745,7 +745,7 @@
   text-align: justify;
   margin-left: auto;
   margin-right: auto;
-  color: #353745;
+  color: #00a1df;
   font-size: 1.6vw;
   white-space: nowrap;
 }
@@ -758,7 +758,7 @@
 
 
 .divider {
-  border: 1px solid #353745;
+  border: 1px solid #304ca0;
 }
 
 .address {
@@ -769,7 +769,7 @@
 
 .address h3 {
   font-weight: 600;
-  color: #353745;
+  color: #304ca0;
   font-size: 1.6vw;
   white-space: nowrap;
 }
