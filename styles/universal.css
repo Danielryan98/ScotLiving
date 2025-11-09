@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: myFirstFont;
-	src: url(Fonts/Quicksand-VariableFont_wght.ttf);
+	src: url(../Fonts/Quicksand-VariableFont_wght.ttf);
   }
 
   @media (max-width: 500px) {

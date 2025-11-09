@@ -13,17 +13,14 @@ document.write(`<div class="second-header-top">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Offers</a>
+          <a class="nav-link" href="#">Frames</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="fabricsofas.html">Mattresses</a>
+          <a class="nav-link" href="catalogue.html">Mattresses</a>
         </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Bed Frames</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Bed Sets</a>
+            <a class="nav-link" href="#">Divans</a>
           </li>
       </ul>
     </div>
