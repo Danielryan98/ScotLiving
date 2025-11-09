@@ -182,7 +182,6 @@ function renderCards(models) {
       <div class="card-body">
         <p class="card-title">${sofa.productName}</p>
         <p class="product-price">£${sofa.price}</p>
-        <p class="product-description">Product Description</p>
       </div>
     </div>
   `

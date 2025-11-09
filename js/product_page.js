@@ -78,16 +78,70 @@ function toDetailModel(p) {
   };
 }
 
-/** ---------- Render ---------- */
+/** ---------- Render (show only existing images; photoOne = original) ---------- */
 function renderImages(model) {
-  const [one, two, three, four] = [model.images[0], model.images[1], model.images[2], model.images[3]];
-  const set = (id, src) => { const el = document.getElementById(id); if (el) el.src = src || ""; };
-  set("bigImg", one || "");
-  set("photoOne", one || "");
-  set("photoTwo", two || one || "");
-  set("photoThree", three || two || one || "");
-  set("photoFour", four || three || two || one || "");
+  const imgs = (model.images || []).filter(Boolean);
+  const big  = document.getElementById("bigImg");
+  const ids  = ["photoOne", "photoTwo", "photoThree", "photoFour"];
+
+  // Set the main image to the first real image
+  if (big) big.src = imgs[0] || "";
+
+  // Set each thumb to its matching image (hide if missing)
+  ids.forEach((id, i) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (imgs[i]) {
+      el.src = imgs[i];
+      el.dataset.index = String(i);   // remember which image it represents
+      el.style.display = "";          // show
+    } else {
+      el.removeAttribute("src");
+      el.style.display = "none";      // hide if not present
+      el.removeAttribute("data-index");
+    }
+  });
+
+  // mark first thumb active
+  setActiveThumb(0);
 }
+
+/** ---------- Click to swap big image; click photoOne to restore ---------- */
+function wireImageInteractions() {
+  const big = document.getElementById("bigImg");
+  const close = document.getElementsByClassName("product-close")[0];
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("img01");
+
+  // delegate clicks from the container (works even if some thumbs are hidden)
+  document.addEventListener("click", (e) => {
+    const thumb = e.target.closest(".small-img");
+    if (!thumb || !big || !thumb.src) return;
+    big.src = thumb.src;
+    const idx = Number(thumb.dataset.index || 0);
+    setActiveThumb(idx);              // update highlight
+  });
+
+  // modal behavior (unchanged)
+  if (big && modal && modalImg) {
+    big.onclick = () => { modal.style.display = "block"; modalImg.src = big.src; };
+  }
+  if (close && modal) {
+    close.onclick = () => { modal.style.display = "none"; };
+    window.addEventListener("click", (ev) => { if (ev.target == modal) modal.style.display = "none"; });
+  }
+}
+
+/** ---------- Visual active state for the selected thumb ---------- */
+function setActiveThumb(activeIdx) {
+  ["photoOne","photoTwo","photoThree","photoFour"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el || el.style.display === "none") return;
+    el.classList.toggle("is-active", Number(el.dataset.index) === activeIdx);
+  });
+}
+
+
 
 function renderText(model) {
   const titleEl = qs(".sl-title");
