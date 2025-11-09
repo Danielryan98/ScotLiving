@@ -98,11 +98,14 @@
 
 <div id="my-cart"></div>
 
+<script src="/js/config.js"></script>
+
 <script>
+	const { SHOP_DOMAIN, STOREFRONT_TOKEN } = window.ShopifyConfig;
   (function() {
     var client = ShopifyBuy.buildClient({
-      domain: 'ew1p0e-te.myshopify.com',
-      storefrontAccessToken: '5a8d7121ceec1c23a9770b01f2d0f745'
+      domain: SHOP_DOMAIN,
+      storefrontAccessToken: STOREFRONT_TOKEN
     });
 
     var ui = ShopifyBuy.UI.init(client);
@@ -134,14 +137,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-
-	<script>
-		fetch("navbar.html")
-		  .then(response => response.text())
-		  .then(data => {
-			document.getElementById("navbar-placeholder").innerHTML = data;
-		  });
-	  </script>
 	</section>
 </body>
 </html>

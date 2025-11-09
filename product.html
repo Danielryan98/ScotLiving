@@ -27,9 +27,9 @@
       --sl-muted: #ffffffd0;
       --sl-panel: #304ca0;
       --sl-divider: #e9ecef;
-      --sl-accent: #226C3B;
+      --sl-accent: #78b657;
       --sl-accent-ink: #ffffff;
-      --sl-price: #2d8d4d;
+      --sl-price: #78b657;
       --sl-radius: 16px;
       --sl-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
@@ -129,8 +129,8 @@
     .sl-actions {
       display: grid;
       grid-template-columns: 1fr;
-      grid-gap: 10px;
-      margin-top: 10px;
+      grid-gap: 0;
+      margin-top: 0;
     }
 
     .sl-btn {
@@ -158,6 +158,16 @@
     .sl-btn-ghost {
       background: transparent;
       color: var(--sl-ink);
+    }
+
+    .sl-actions {
+      display: grid;
+      justify-items: center;   /* horizontal centering */
+    }
+
+    #slBuyButtonHost .shopify-buy__btn {
+      width: auto;             /* was 100% */
+      min-width: 220px;        /* optional: keep a nice size */
     }
 
     /* Make sure the right card looks good on narrow screens too */
@@ -202,12 +212,11 @@
 		<div id="column-two" class="column">
 			<div id="card-two" class="card" style="width: 372px; background-color: #ffff; border: none;">
         <div class="sl-details-card">
-          <h1 class="sl-title">The Hackney</h1>
-          <p class="sl-subtitle">Fabric sofa • 2 seater</p>
+          <h1 class="sl-title"></h1>
+          <p class="sl-subtitle"></p>
 
-          <p class="sl-price" id="slPriceLabel">£1,299</p>
+          <p class="sl-price" id="slPriceLabel"></p>
           <p class="sl-lead">
-            A modern classic with cloud-soft cushions and a supportive sit. Carefully upholstered in a durable, family-friendly fabric that looks refined yet relaxed.
           </p>
 
 		  <div>
@@ -237,10 +246,8 @@
           <div>
             <h3 class="sl-section-title">Description</h3>
             <p class="sl-paragraph">
-              Handcrafted by skilled upholsterers, The Hackney pairs deep cushions with subtly flared arms for a timeless profile. Seat cushions are generous and supportive, while the back cushions softly cradle you for long movies or lazy Sundays.
             </p>
             <p class="sl-paragraph">
-              Built on a robust hardwood frame and finished with solid wood feet, it’s designed to last. Fabrics are easy to care for with a gently textured weave that hides everyday marks. Choose from our curated palette to suit your space.
             </p>
           </div>
 
@@ -249,125 +256,7 @@
           <p class="sl-lead"><i class="fa fa-clock-o" aria-hidden="true"></i> Delivered from <strong>7 weeks</strong>.</p>
 
           <div class="sl-actions">
-			<button id="slAddToCartBtn" type="button" class="sl-btn sl-btn-primary">
-				<i class="fa fa-phone" aria-hidden="true"></i> Enquire Now
-			  </button>
-        <div id="collection-component-1762631673887"></div>
-<script type="text/javascript">
-/*<![CDATA[*/
-(function () {
-  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-  if (window.ShopifyBuy) {
-    if (window.ShopifyBuy.UI) {
-      ShopifyBuyInit();
-    } else {
-      loadScript();
-    }
-  } else {
-    loadScript();
-  }
-
-  function loadScript() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = scriptURL;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-    script.onload = ShopifyBuyInit;
-  }
-
-  function ShopifyBuyInit() {
-    var client = ShopifyBuy.buildClient({
-      domain: 'ew1p0e-te.myshopify.com',
-      storefrontAccessToken: '5a8d7121ceec1c23a9770b01f2d0f745'
-    });
-
-    ShopifyBuy.UI.onReady(client).then(function (ui) {
-      ui.createComponent('collection', {
-        id: '661038170449',
-        node: document.getElementById('collection-component-1762631673887'),
-        moneyFormat: '%C2%A3%7B%7Bamount%7D%7D',
-        options: {
-          product: {
-            layout: 'vertical',
-            // ✅ hide images (and other bits you don't want)
-            contents: {
-              img: false,
-              imgWithCarousel: false,
-              title: false,          // set to false if you don't want titles
-              price: false,          // set to false if you don't want prices
-              options: false,
-              quantityInput: false,
-              description: false
-            },
-            buttonDestination: 'cart',
-            text: { button: 'Add to cart' },
-            styles: {
-              product: {
-                '@media (min-width: 601px)': {
-                  'max-width': 'calc(25% - 20px)',
-                  'margin-left': '20px',
-                  'margin-bottom': '50px',
-                  'width': 'calc(25% - 20px)'
-                }
-              },
-              button: { 'border-radius': '13px' }
-            }
-          },
-
-          productSet: {
-            styles: {
-              products: {
-                '@media (min-width: 601px)': {
-                  'margin-left': '-20px'
-                }
-              }
-            }
-          },
-
-          // ✅ also hide images in the modal (quick view)
-          modalProduct: {
-            contents: {
-              img: false,
-              imgWithCarousel: false,
-              title: false,
-              price: false,
-              options: false
-            },
-            styles: {
-              product: {
-                '@media (min-width: 601px)': {
-                  'max-width': '100%',
-                  'margin-left': '0px',
-                  'margin-bottom': '0px'
-                }
-              },
-              button: { 'border-radius': '13px' }
-            },
-            text: { button: 'Add to cart' }
-          },
-
-          option: {},
-
-          cart: {
-            styles: {
-              button: { 'border-radius': '13px' }
-            },
-            text: {
-              total: 'Subtotal',
-              button: 'Checkout'
-            },
-            contents: { title: false },
-            popup: false
-          },
-
-          toggle: {}
-        }
-      });
-    });
-  }
-})();
-/*]]>*/
-</script>
+            <div id="slBuyButtonHost" class="sl-actions"></div>
 
             <!-- <button id="slAddToCartBtn" type="button" class="sl-btn sl-btn-primary">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart
@@ -392,8 +281,9 @@
 		<!-- Modal Content (The Image) -->
 		<img class="product-modal-content" id="img01">
 
-		<!-- Optional JavaScript -->
-		<script type="text/javascript" src='products.js'> </script>
+		<!-- JavaScript -->
+    <script src="/js/config.js"></script>
+    <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
 		<script type="text/javascript" src='product_page.js'> </script>
 		<!-- <script type="text/javascript" src='cart.js'> </script> -->
 
@@ -409,22 +299,12 @@
 		 crossorigin="anonymous"></script>
 
      <script>
-      fetch("navbar.html")
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById("navbar-placeholder").innerHTML = data;
-        });
-    </script>
-     <script>
        (function() {
          "use strict";
 
          // Explicit variable declarations for all elements we touch.
          var slSwatchButtons = document.querySelectorAll(".sl-swatch");
          var slSwatchActiveLabel = document.getElementById("slSwatchActiveLabel");
-         var slAddToCartBtn = document.getElementById("slAddToCartBtn");
-         var slSaveBtn = document.getElementById("slSaveBtn");
-         var slPriceLabel = document.getElementById("slPriceLabel");
 
          // Defensive checks (elements exist before binding).
          if (slSwatchButtons && slSwatchButtons.length > 0 && slSwatchActiveLabel) {
@@ -443,40 +323,8 @@
              })(slSwatchButtons[i]);
            }
          }
-
-         // Add to cart feedback (replace with your own add-to-cart logic)
-         if (slAddToCartBtn) {
-           slAddToCartBtn.addEventListener("click", function() {
-             var chosen = "Unknown";
-             // Find which swatch is active
-             for (var i = 0; i < slSwatchButtons.length; i++) {
-               if (slSwatchButtons[i].getAttribute("aria-checked") === "true") {
-                 chosen = slSwatchButtons[i].getAttribute("data-color") || "Unknown";
-               }
-             }
-             // In real integration, call your cart function here.
-             // This alert is just a placeholder confirmation.
-             var priceText = slPriceLabel ? slPriceLabel.textContent : "£—";
-             alert("Added to cart: The Hackney (2 Seater) — " + chosen + " • " + priceText);
-           });
-         }
-
-         // Save for later feedback
-         if (slSaveBtn) {
-           slSaveBtn.addEventListener("click", function() {
-             var original = slSaveBtn.innerHTML;
-             slSaveBtn.disabled = true;
-             slSaveBtn.innerHTML = '<i class="fa fa-check" aria-hidden="true"></i> Saved';
-             window.setTimeout(function() {
-               slSaveBtn.disabled = false;
-               slSaveBtn.innerHTML = original;
-             }, 1500);
-           });
-         }
        })();
-     </script>
-
-     
+     </script>     
 	</section>
 </body>
 </html>

@@ -79,29 +79,7 @@
 
       <div id="my-cart"></div>
 
-      <script>
-        (function () {
-          var client = ShopifyBuy.buildClient({
-            domain: "ew1p0e-te.myshopify.com",
-            storefrontAccessToken: "5a8d7121ceec1c23a9770b01f2d0f745",
-          });
-
-          var ui = ShopifyBuy.UI.init(client);
-
-          ui.createComponent("cart", {
-            node: document.getElementById("my-cart"), // optional
-            options: {
-              cart: {
-                startOpen: false,
-                popup: false,
-              },
-              toggle: {
-                contents: { title: false },
-              },
-            },
-          });
-        })();
-      </script>
+      <script src="/js/config.js"></script>
 
       <!-- Optional JavaScript -->
       <script type="text/javascript" src="products.js"></script>
@@ -123,7 +101,6 @@
       ></script>
 
       <script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
-      <script src="/shopify-cart.js"></script>
     </section>
   </body>
 </html>

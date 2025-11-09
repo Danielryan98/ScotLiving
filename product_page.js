@@ -1,137 +1,280 @@
-window.onload = function () {
-    //localStorage.clear();
-    buildImages();
-    document.getElementById("productName").innerHTML=(fabricSofasData[productNumber].productName);
-    document.getElementById("price").innerHTML='£'+(fabricSofasData[productNumber].price);
-    document.getElementById("name-of-product").innerHTML=(fabricSofasData[productNumber].productName);
-    let cartItems = localStorage.getItem('productsInCart');
-    cartItems = JSON.parse(cartItems);
-    if(cartItems[fabricSofasData[productNumber].productName].inCart > 0){
-      document.getElementById("basket-phone-container").innerHTML = `
-      <button id="buy-btn" class="btn-buy" style="background-color: blue;" onclick="setColour()";><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em>Added to Basket</button>
-            <button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 2%; padding-left: 1%;"></em> Order by Phone</button>
-            <img id="adOne" src="Pictures/sale.png" alt="">
-            <img id="adTwo" src="Pictures/chair.png" alt="">
-            `
-    }
+/** ========= Shopify Storefront config ========= */
+const { SHOP_DOMAIN, STOREFRONT_TOKEN, API_VERSION } = window.ShopifyConfig;
+
+/** ---------- Utilities ---------- */
+const qs  = (sel) => document.querySelector(sel);
+const qsa = (sel) => Array.from(document.querySelectorAll(sel));
+const fmtGBP = (v) => `£${Number(v).toFixed(2)}`;
+
+// Convert Shopify GID -> numeric id string (Buy Button UI expects numeric)
+function toNumericId(gidOrNum) {
+  if (!gidOrNum) return null;
+  const s = String(gidOrNum);
+  return s.includes("/") ? s.split("/").pop() : s;
 }
 
-function setColour() {
-    document.getElementById("basket-phone-container").innerHTML = `<button id="buy-btn" class="btn-buy" style="background-color: blue !important;" onclick="setColour()";><em class="fa fa-shopping-basket fa-lg" style="padding-right: 3%;"></em>Added to Basket</button>
-					<button class="btn-phone"><em class="fa fa-phone fa-lg" style="padding-right: 2%; padding-left: 1%;"></em> Order by Phone</button>
-					<img id="adOne" src="Pictures/sale.png" alt="">
-					<img id="adTwo" src="Pictures/chair.png" alt="">
-          `;
-          addToCart();
-          
-}
-
-function buildImages() {
-    var img = document.getElementById("bigImg")
-    img.src = fabricSofasData[productNumber].photoOne;
-    var imgOne = document.getElementById("photoOne")
-    imgOne.src = fabricSofasData[productNumber].photoOne;
-    var imgTwo = document.getElementById("photoTwo")
-    imgTwo.src = fabricSofasData[productNumber].photoTwo;
-    var imgThree = document.getElementById("photoThree")
-    imgThree.src = fabricSofasData[productNumber].photoThree;
-    var imgFour = document.getElementById("photoFour")
-    imgFour.src = fabricSofasData[productNumber].photoFour;
+/** ---------- GraphQL ---------- */
+async function shopifyGraphQL(query, variables = {}) {
+  const res = await fetch(`https://${SHOP_DOMAIN}/api/${API_VERSION}/graphql.json`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-Shopify-Storefront-Access-Token": STOREFRONT_TOKEN,
+    },
+    body: JSON.stringify({ query, variables }),
+  });
+  const json = await res.json();
+  if (!res.ok || json.errors) {
+    const err = json.errors ? JSON.stringify(json.errors) : await res.text();
+    throw new Error(err);
   }
-
-  function changeImage(smallImg){
-    var fullImg = document.getElementById("bigImg");
-    fullImg.src = smallImg.src;
+  return json.data;
 }
 
-
-var productNumber = localStorage.getItem("productIndex");
-console.log(productNumber);
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("bigImg");
-var modalImg = document.getElementById("img01");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("product-close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-
-// Checkout related code
-//Get the product added to basket
-function addToCart(){
-  cartNumbers();
-  totalCost(fabricSofasData[productNumber]);
-}
-
-
-function cartNumbers() {
-  console.log('clicked product', productNumber);
-  let productNumbers = localStorage.getItem('cartNumbers');
-
-  productNumbers = parseInt(productNumbers);
-
-  if(productNumbers){
-    localStorage.setItem('cartNumbers', productNumbers + 1);
-  } else {
-    localStorage.setItem('cartNumbers', 1);
-  }
-  setItems(fabricSofasData);
-  
-}
-
-function setItems(fabricSofasData) {
-  let cartItems = localStorage.getItem('productsInCart');
-  cartItems = JSON.parse(cartItems);
-
-  if(cartItems != null){
-
-    if(cartItems[fabricSofasData[productNumber].productName] == undefined) {
-      cartItems = {
-        ...cartItems,
-        [fabricSofasData[productNumber].productName]: fabricSofasData[productNumber]
+const PRODUCT_BY_HANDLE = /* GraphQL */ `
+  query ProductByHandle($handle: String!) {
+    product(handle: $handle) {
+      id
+      title
+      description
+      handle
+      images(first: 10) { nodes { url altText } }
+      priceRange {
+        minVariantPrice { amount currencyCode }
+        maxVariantPrice { amount currencyCode }
+      }
+      variants(first: 50) {
+        nodes {
+          id
+          title
+          price { amount currencyCode }
+          availableForSale
+          image { url altText }
+        }
       }
     }
-    cartItems[fabricSofasData[productNumber].productName].inCart += 1;
-  } else {
-    fabricSofasData[productNumber].inCart = 1;
-    cartItems = {
-      [fabricSofasData[productNumber].productName]: fabricSofasData[productNumber]
+  }
+`;
+
+/** ---------- Map to your UI model ---------- */
+function toDetailModel(p) {
+  const imgs = p.images?.nodes?.map(n => n.url) ?? [];
+  const min  = p.priceRange?.minVariantPrice;
+  return {
+    id: p.id,
+    handle: p.handle,
+    productName: p.title,
+    description: p.description || "",
+    price: min ? Number(min.amount) : null,
+    currency: min?.currencyCode || "GBP",
+    images: imgs,
+    variants: (p.variants?.nodes || []).map(v => ({
+      id: v.id,
+      title: v.title,
+      price: Number(v.price.amount),
+      available: !!v.availableForSale,
+      image: v.image?.url || null
+    }))
+  };
+}
+
+/** ---------- Render ---------- */
+function renderImages(model) {
+  const [one, two, three, four] = [model.images[0], model.images[1], model.images[2], model.images[3]];
+  const set = (id, src) => { const el = document.getElementById(id); if (el) el.src = src || ""; };
+  set("bigImg", one || "");
+  set("photoOne", one || "");
+  set("photoTwo", two || one || "");
+  set("photoThree", three || two || one || "");
+  set("photoFour", four || three || two || one || "");
+}
+
+function renderText(model) {
+  const titleEl = qs(".sl-title");
+  const priceEl = document.getElementById("slPriceLabel");
+  const descEls = qsa(".sl-paragraph");
+  if (titleEl) titleEl.textContent = model.productName || "Product";
+  if (priceEl)  priceEl.textContent = model.price != null ? fmtGBP(model.price) : "£—";
+  if (descEls.length > 0) {
+    descEls[0].textContent = model.description || "Beautifully crafted sofa with premium comfort and durable upholstery.";
+  }
+}
+
+/** ---------- Image swap & modal ---------- */
+function wireImageInteractions() {
+  const big = document.getElementById("bigImg");
+  const modal = document.getElementById("myModal");
+  const modalImg = document.getElementById("img01");
+  const close = document.getElementsByClassName("product-close")[0];
+
+  qsa(".small-img").forEach(img =>
+    img.addEventListener("click", function(){ if (big) big.src = this.src; })
+  );
+  if (big && modal && modalImg) {
+    big.onclick = () => { modal.style.display = "block"; modalImg.src = big.src; };
+  }
+  if (close && modal) {
+    close.onclick = () => { modal.style.display = "none"; };
+    window.addEventListener("click", (ev) => { if (ev.target == modal) modal.style.display = "none"; });
+  }
+}
+
+/** ---------- Buy Button UI: cart + product (button only) ---------- */
+let slClient;
+let slUI;
+let slCartComponent;
+let slProductComponent;
+
+function sdkReady() {
+  if (!window.ShopifyBuy || !ShopifyBuy.UI) {
+    throw new Error("Shopify Buy Button SDK not loaded. Use buy-button-storefront.min.js and include it before this file.");
+  }
+}
+
+function getClient() {
+  sdkReady();
+  if (slClient) return slClient;
+  slClient = ShopifyBuy.buildClient({
+    domain: SHOP_DOMAIN,
+    storefrontAccessToken: STOREFRONT_TOKEN,
+  });
+  return slClient;
+}
+
+function uiReady() {
+  const client = getClient();
+  return ShopifyBuy.UI.onReady(client).then(ui => {
+    slUI = ui;
+    return ui;
+  });
+}
+
+// Mount a product component that renders ONLY a button, styled like your button
+async function mountBuyButtonFor(productGid) {
+  // await mountCart(); // ensure cart exists (the UI usually opens it after add)
+  const host = document.getElementById("slBuyButtonHost");
+  if (!host) return;
+
+  // Destroy previous product component if any (navigating between products on same page)
+  try { slProductComponent?.destroy?.(); } catch {}
+
+  slProductComponent = await slUI.createComponent("product", {
+    id: toNumericId(productGid),   // numeric id string
+    node: host,
+    moneyFormat: "%C2%A3%7B%7Bamount%7D%7D",
+    options: {
+      product: {
+        layout: "vertical",
+        // render ONLY the button; hide everything else
+        contents: {
+          img: false,
+          imgWithCarousel: false,
+          title: false,
+          price: false,
+          options: false,
+          quantityInput: false,
+          description: false
+        },
+        buttonDestination: "cart", // add to cart (side panel)
+        text: { button: "Add to Cart" },
+        styles: {
+          product: { "margin": "0", "width": "100%" },
+          button: {
+            "background": "#78b657",       // ← your colour
+            "color": "#ffffff",
+            "width": "100%",
+            "border": "none",
+            "border-radius": "12px",
+            "padding": "12px 14px",
+            "font-weight": "800",
+            // states
+            ":hover": { "background": "#1c5a31" },
+            ":focus": { "background": "#1c5a31" },
+            ":disabled": { "background": "#9fb8a7" }
+          }
+        }
+      },
+      cart: {
+        popup: false,
+        styles: { button: { "border-radius": "12px" } },
+        text: { total: "Subtotal", button: "Checkout" }
+      },
+      modalProduct: {
+        contents: { img: false, imgWithCarousel: true, buttonWithQuantity: true },
+        styles: {
+          product: { "@media (min-width: 601px)": { "max-width": "100%", "margin-left": "0", "margin-bottom": "0" } },
+          button: { "border-radius": "12px" }
+        },
+        text: { button: "Add to cart" }
+      }
+    }
+  });
+
+  // After render, make sure the internal button matches your container styling
+  // (slBuyButtonHost already has .sl-actions, but this is extra polish)
+  host.classList.add("sl-actions");
+}
+
+/** ---------- Load current product & mount UI button ---------- */
+async function loadProductDetail() {
+  // 1) Fast render from localStorage
+  const handle = localStorage.getItem("productHandle");
+  const list   = JSON.parse(localStorage.getItem("productList") || "[]");
+  const idx    = Number(localStorage.getItem("productIndex") || "-1");
+
+  let optimistic = null;
+  const pickLocal = (p) => p && ({
+    id: p.id || null,
+    handle: p.handle,
+    productName: p.productName,
+    description: p.description || "",
+    price: p.price ? Number(p.price) : null,
+    currency: p.currency || "GBP",
+    images: [p.photoOne, p.photoTwo, p.photoThree, p.photoFour].filter(Boolean),
+    variants: p.variants || [],
+  });
+
+  if (idx > -1 && list[idx]) optimistic = pickLocal(list[idx]);
+  else if (handle && list.length) optimistic = pickLocal(list.find(x => x.handle === handle));
+
+  if (optimistic) {
+    renderImages(optimistic);
+    renderText(optimistic);
+    window.__currentProduct = optimistic;
+  }
+
+  // 2) Fresh fetch
+  try {
+    const chosenHandle = handle || (optimistic && optimistic.handle);
+    if (!chosenHandle) throw new Error("No product handle in localStorage.");
+    const data  = await shopifyGraphQL(PRODUCT_BY_HANDLE, { handle: chosenHandle });
+    if (!data.product) throw new Error("Product not found.");
+    const model = toDetailModel(data.product);
+
+    renderImages(model);
+    renderText(model);
+    window.__currentProduct = model;
+
+    // Mount the Buy Button UI for THIS product (button only; cart drawer opens on add)
+    await mountBuyButtonFor(model.id);
+  } catch (e) {
+    console.warn("Storefront fetch failed:", e);
+    if (!optimistic) {
+      const titleEl = qs(".sl-title");
+      const priceEl = document.getElementById("slPriceLabel");
+      if (titleEl) titleEl.textContent = "Product unavailable";
+      if (priceEl) priceEl.textContent = "£—";
     }
   }
-  
-  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
-  
 }
 
-function totalCost(product){
-
-  let cartCost = localStorage.getItem('totalCost');
-
-  if(cartCost != null) {
-    cartCost = parseInt(cartCost);
-    localStorage.setItem("totalCost", cartCost + product.price);
-  } else {
-    localStorage.setItem("totalCost", product.price);
+/** ---------- Init ---------- */
+window.addEventListener("load", async () => {
+  try {
+    wireImageInteractions();
+    await uiReady();       // ensure Buy Button UI is ready
+    await loadProductDetail();
+  } catch (e) {
+    console.error(e);
   }
-
-}
-
-onLoadCartNumbers();
+});
