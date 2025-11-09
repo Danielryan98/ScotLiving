@@ -1,61 +1,50 @@
 
-function init(){
-
-var d = new Date();
-var n = d.getDay();
-var t = d.getHours();
-
-    if(n == '1' && t >= 10 && t <= 15){
-        document.getElementById('Monday').style.color = 'green';
-    } else {
-        if(n == '1'){
-            document.getElementById('Monday').style.color = 'red';
-        }
+function init() {
+    const d = new Date();
+    const n = d.getDay(); 
+    const t = d.getHours();
+  
+    if (n === 1 && t >= 10 && t <= 15) {
+      document.getElementById('Monday').style.color = 'green';
+    } else if (n === 1) {
+      document.getElementById('Monday').style.color = 'red';
     }
-
-    if(n == '2' && t >= 10 && t <= 15){
-        document.getElementById('Tuesday').style.color = 'green';
-    } else {
-        if(n == '2'){
-            document.getElementById('Tuesday').style.color = 'red';
-        }
+  
+    if (n === 2 && t >= 10 && t <= 15) {
+      document.getElementById('Tuesday').style.color = 'green';
+    } else if (n === 2) {
+      document.getElementById('Tuesday').style.color = 'red';
     }
-
-    if(n == '3'){
-        document.getElementById('Wednesday').style.color = 'red';
+  
+    if (n === 3) {
+      document.getElementById('Wednesday').style.color = 'red';
     }
-
-    if(n == '4' && t >= 10 && t <= 15){
-        document.getElementById('Thursday').style.color = 'green';
-    } else {
-        if(n == '4'){
-            document.getElementById('Thursday').style.color = 'red';
-        }
+  
+    if (n === 4 && t >= 10 && t <= 15) {
+      document.getElementById('Thursday').style.color = 'green';
+    } else if (n === 4) {
+      document.getElementById('Thursday').style.color = 'red';
     }
-
-    if(n == '5' && t >= 10 && t <= 15){
-        document.getElementById('Friday').style.color = 'green';
-    } else {
-        if(n == '5'){
-            document.getElementById('Friday').style.color = 'red';
-        }
+  
+    if (n === 5 && t >= 10 && t <= 15) {
+      document.getElementById('Friday').style.color = 'green';
+    } else if (n === 5) {
+      document.getElementById('Friday').style.color = 'red';
     }
-
-    if(n == '6' && t >= 10 && t <= 15){
-        document.getElementById('Saturday').style.color = 'green';
-    } else {
-        if(n == '6'){
-            document.getElementById('Saturday').style.color = 'red';
-        }
+  
+    if (n === 6 && t >= 10 && t <= 15) {
+      document.getElementById('Saturday').style.color = 'green';
+    } else if (n === 6) {
+      document.getElementById('Saturday').style.color = 'red';
     }
-    
-    if(n == '7'){
-        document.getElementById('Sunday').style.color = 'red';
+  
+    if (n === 0) {
+      document.getElementById('Sunday').style.color = 'red';
     }
-}
-
-init();
-
+  }
+  
+  init();
+  
 
 
 function getElementY(query) {

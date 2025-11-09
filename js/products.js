@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   /** ====== Config ====== */
-  const { SHOP_DOMAIN, STOREFRONT_TOKEN, API_VERSION } = window.ShopifyConfig || {};
+  const { SHOP_DOMAIN, STOREFRONT_TOKEN, API_VERSION } =
+    window.ShopifyConfig || {};
   if (!SHOP_DOMAIN || !STOREFRONT_TOKEN || !API_VERSION) {
-    console.error("Missing ShopifyConfig (SHOP_DOMAIN / STOREFRONT_TOKEN / API_VERSION).");
+    console.error(
+      "Missing ShopifyConfig (SHOP_DOMAIN / STOREFRONT_TOKEN / API_VERSION)."
+    );
     const app = document.getElementById("app");
-    if (app) app.innerHTML = `<div class="col-12 text-danger">Missing Shopify config.</div>`;
+    if (app)
+      app.innerHTML = `<div class="col-12 text-danger">Missing Shopify config.</div>`;
     return;
   }
 
@@ -17,18 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /** ====== GraphQL helper ====== */
   async function shopifyGraphQL(query, variables = {}) {
-    const res = await fetch(`https://${SHOP_DOMAIN}/api/${API_VERSION}/graphql.json`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Shopify-Storefront-Access-Token": STOREFRONT_TOKEN,
-      },
-      body: JSON.stringify({ query, variables }),
-    });
+    const res = await fetch(
+      `https://${SHOP_DOMAIN}/api/${API_VERSION}/graphql.json`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Shopify-Storefront-Access-Token": STOREFRONT_TOKEN,
+        },
+        body: JSON.stringify({ query, variables }),
+      }
+    );
 
     const text = await res.text();
     let json = null;
-    try { json = JSON.parse(text); } catch { /* not JSON */ }
+    try {
+      json = JSON.parse(text);
+    } catch {
+      /* not JSON */
+    }
 
     if (!res.ok) throw new Error(`Shopify ${res.status}: ${text}`);
     if (json?.errors) throw new Error(JSON.stringify(json.errors));
@@ -40,15 +51,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const PRODUCTS_SEARCH_QUERY = /* GraphQL */ `
     query ProductsSearch($first: Int!, $after: String, $q: String) {
       products(first: $first, after: $after, query: $q, sortKey: TITLE) {
-        pageInfo { hasNextPage endCursor }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
         nodes {
           id
           handle
           title
-          images(first: 5) { nodes { url altText } }
-          priceRange { minVariantPrice { amount currencyCode } }
+          images(first: 5) {
+            nodes {
+              url
+              altText
+            }
+          }
+          priceRange {
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
           variants(first: 5) {
-            nodes { title price { amount currencyCode } image { url altText } }
+            nodes {
+              title
+              price {
+                amount
+                currencyCode
+              }
+              image {
+                url
+                altText
+              }
+            }
           }
         }
       }
@@ -58,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Map your nav tabs to a product search query
   // ✅ Product type version (recommended: set product_type in Admin → Products)
   const CATEGORY_TO_QUERY = {
-    frames:     `product_type:'Frames'`,
+    frames: `product_type:'Frames'`,
     mattresses: `product_type:'Mattresses'`,
-    divans:     `product_type:'Divans'`,
+    divans: `product_type:'Divans'`,
   };
 
   // If you prefer tags instead, use this mapping instead:
@@ -94,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /** ====== Transform + Render ====== */
   function toCardModel(p) {
-    const imgs  = p.images?.nodes?.map(n => n.url) ?? [];
+    const imgs = p.images?.nodes?.map((n) => n.url) ?? [];
     const price = p.priceRange?.minVariantPrice ?? null;
     const priceStr = price ? Number(price.amount).toFixed(2) : "—";
     return {
@@ -122,10 +156,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Build rows of cards
-    const html = models.map((m, idx) => `
-
-    <div class="card" data-index="${idx}" style="width:463px;margin:auto;">
+    const html = models
+      .map(
+        (m, idx) => `
+  <div class="col-12 col-sm-6 col-md-4 d-flex">
+    <div class="card flex-fill">
       <div class="product-img-container" style="height:315px;">
         <a href="javascript:void(0);" class="product-link" data-index="${idx}">
           <img class="product-photo" style="width:100%;height:100%;object-fit:cover;"
@@ -137,9 +172,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="product-price">£${m.price}</p>
       </div>
     </div>
-  `
-    )
-    .join("");
+  </div>
+`
+      )
+      .join("");
 
     app.innerHTML = html;
 
@@ -162,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const cat = getCategoryFromUrl() || "frames"; // default tab/category
 
       const products = await fetchProductsForCategory(cat);
-      const models   = products.map(toCardModel);
+      const models = products.map(toCardModel);
 
       // persist for product page
       localStorage.setItem("productList", JSON.stringify(models));
@@ -170,7 +206,8 @@ document.addEventListener("DOMContentLoaded", () => {
       renderCards(models);
 
       const titleEl = document.getElementById("catalogue-title");
-      if (titleEl) titleEl.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+      if (titleEl)
+        titleEl.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     } catch (err) {
       console.error(err);
       const app = document.getElementById("app");
