@@ -1,6 +1,6 @@
 document.write(`<div class="second-header-top">
     <div class="logo">
-    <a href="index.html">      <img src="/Assets/Scot_Living_Logos/Logo/Standard Logo Files/logo.jpg"/>
+    <a href="index.html">      <img src="/Assets/nav/logo.jpg"/>
 </a></div>
     <!-- <div class="search-container">
         <input class="search-input" type="text" placeholder="Search for products & inspiration">

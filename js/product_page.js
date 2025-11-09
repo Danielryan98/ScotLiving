@@ -114,6 +114,7 @@ function wireImageInteractions() {
     big.onclick = () => { modal.style.display = "block"; modalImg.src = big.src; };
   }
   if (close && modal) {
+    close.style.cursor = "pointer";
     close.onclick = () => { modal.style.display = "none"; };
     window.addEventListener("click", (ev) => { if (ev.target == modal) modal.style.display = "none"; });
   }
