@@ -5,7 +5,7 @@ var d = new Date();
 var n = d.getDay();
 var t = d.getHours();
 
-    if(n == '1' && t >= 9 && t <= 16){
+    if(n == '1' && t >= 10 && t <= 15){
         document.getElementById('Monday').style.color = 'green';
     } else {
         if(n == '1'){
@@ -13,7 +13,7 @@ var t = d.getHours();
         }
     }
 
-    if(n == '2' && t >= 9 && t <= 16){
+    if(n == '2' && t >= 10 && t <= 15){
         document.getElementById('Tuesday').style.color = 'green';
     } else {
         if(n == '2'){
@@ -25,7 +25,7 @@ var t = d.getHours();
         document.getElementById('Wednesday').style.color = 'red';
     }
 
-    if(n == '4' && t >= 9 && t <= 16){
+    if(n == '4' && t >= 10 && t <= 15){
         document.getElementById('Thursday').style.color = 'green';
     } else {
         if(n == '4'){
@@ -33,7 +33,7 @@ var t = d.getHours();
         }
     }
 
-    if(n == '5' && t >= 9 && t <= 16){
+    if(n == '5' && t >= 10 && t <= 15){
         document.getElementById('Friday').style.color = 'green';
     } else {
         if(n == '5'){
@@ -41,7 +41,7 @@ var t = d.getHours();
         }
     }
 
-    if(n == '6' && t >= 9 && t <= 16){
+    if(n == '6' && t >= 10 && t <= 15){
         document.getElementById('Saturday').style.color = 'green';
     } else {
         if(n == '6'){
